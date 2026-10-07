@@ -19,7 +19,13 @@
     --panel-w:350px; --header-h:52px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  /* iOS reports vh against the LARGE viewport — the one with the address bar
+     hidden — so a 100%/vh-tall layout is taller than what you can actually see
+     whenever the bar is showing, and the bottom of the page sits off-screen.
+     dvh tracks the visible viewport; the percentage line is the fallback for
+     anything that does not know dvh. */
   html,body{height:100%}
+  html,body{height:100dvh}
   body{
     background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif;
     overflow:hidden;
@@ -90,8 +96,18 @@
     overflow-y:auto; overscroll-behavior:contain;
     display:flex; flex-direction:column;
   }
-  .sec{padding:1rem 1.1rem; border-bottom:1px solid var(--border)}
-  .sec:last-child{border-bottom:none}
+  /* With viewport-fit=cover the panel runs under the notch and the home
+     indicator. Without these insets a landscape iPhone clips the left edge of
+     every row in here — the date labels most visibly. */
+  .sec{
+    padding:1rem 1.1rem; border-bottom:1px solid var(--border);
+    padding-left:max(1.1rem, env(safe-area-inset-left));
+    padding-right:max(1.1rem, env(safe-area-inset-right));
+  }
+  .sec:last-child{
+    border-bottom:none;
+    padding-bottom:max(1rem, env(safe-area-inset-bottom));
+  }
   .sec-title{
     font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
     color:var(--muted); margin-bottom:.7rem;
@@ -115,6 +131,15 @@
     flex:1; min-width:0; background:#02040c; border:1px solid var(--border);
     color:var(--text); border-radius:7px; padding:.5rem .6rem;
     font-family:inherit; font-size:.82rem;
+  }
+  /* iOS zooms the whole page when a focused input's text is under 16px, and it
+     never zooms back out on blur — leaving the fixed header and the bottom
+     sheet displaced, which reads as the panel being cut off. 16px is the
+     threshold, so this is a minimum and not a style choice. Raising the font is
+     the correct fix; locking the viewport with maximum-scale would also stop
+     the zoom but would take pinch-zoom away from everyone. */
+  @media (pointer:coarse){
+    .find-row input{font-size:16px}
   }
   .find-row input:focus{
     outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(0,212,255,.18);
@@ -173,8 +198,10 @@
     padding:.4rem 0; border-bottom:1px dashed var(--border); font-size:.82rem;
   }
   .date-row:last-child{border-bottom:none}
-  .date-row .what{color:var(--muted)}
-  .date-row .when{font-weight:700; white-space:nowrap}
+  /* min-width:0 is what actually lets the label wrap instead of forcing the row
+     wider than the panel and shoving the date past the edge. */
+  .date-row .what{color:var(--muted); min-width:0}
+  .date-row .when{font-weight:700; white-space:nowrap; flex:none}
   .date-row.past .when,.date-row.past .what{opacity:.45; text-decoration:line-through}
   .date-row.soon .when{color:var(--accent-hi)}
   .countdown{
@@ -207,10 +234,12 @@
   @media (max-width:820px){
     :root{--panel-w:0px}
     #map{right:0; bottom:46vh}
+    #map{bottom:46dvh}
     #panel{
       top:auto; bottom:0; left:0; right:0; width:auto; height:46vh;
       border-left:none; border-top:1px solid var(--border);
     }
+    #panel{height:46dvh}
     header h1{font-size:.92rem}
     header a.home{font-size:.75rem}
   }

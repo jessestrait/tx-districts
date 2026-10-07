@@ -291,6 +291,11 @@ function showFindMsg(html, kind) {
   el.hidden = false;
   el.className = "find-msg" + (kind ? " " + kind : "");
   el.innerHTML = html;
+  /* On a phone the panel is a short scrolling sheet and the on-screen keyboard
+     has just been dismissed, which leaves its scroll position anywhere. Put the
+     answer back under the reader's eye rather than trusting where they landed. */
+  const panel = $("panel");
+  if (panel && panel.scrollHeight > panel.clientHeight) panel.scrollTop = 0;
 }
 
 const SOS = '<a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target="_blank" rel="noopener">Texas My Voter Portal</a>';
