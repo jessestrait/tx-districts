@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Texas Congressional Districts &mdash; 2026 Voting Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1623'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%235a9bf5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Jost:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root{
+    --bg:#080c14; --surface:#0f1623; --surface2:#16203140; --border:#1e2a3a;
+    --text:#e8eef8; --muted:#7a8fa8; --accent:#3a7bd5; --accent-hi:#5a9bf5;
+    --rep:#d64550; --dem:#3a7bd5; --vacant:#6b7688;
+    --panel-w:350px; --header-h:52px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{height:100%}
+  body{
+    background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif;
+    overflow:hidden;
+  }
+
+  /* ── Header ── */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:1100; height:var(--header-h);
+    display:flex; align-items:center; gap:.9rem;
+    padding:0 1.1rem; background:rgba(8,12,20,.94); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  header a.home{
+    color:var(--muted); text-decoration:none; font-size:.85rem; font-weight:700;
+    border:1px solid var(--border); border-radius:6px; padding:.3rem .6rem; white-space:nowrap;
+  }
+  header a.home:hover{color:var(--text); border-color:var(--accent)}
+  header h1{
+    font-family:'Jost',sans-serif; font-size:1.05rem; font-weight:700; white-space:nowrap;
+  }
+  .maptoggle{
+    display:flex; margin-left:auto; border:1px solid var(--border); border-radius:8px;
+    overflow:hidden; flex:none;
+  }
+  .maptoggle button{
+    background:var(--surface); color:var(--muted); border:none; padding:.5rem .8rem;
+    cursor:pointer; font-family:inherit; font-weight:700; font-size:.78rem;
+  }
+  .maptoggle button.active{background:var(--accent); color:#fff}
+  .maptoggle button:not(.active):hover{color:var(--text)}
+
+  /* ── Map ── */
+  #map{position:absolute; top:var(--header-h); left:0; right:var(--panel-w); bottom:0; background:var(--bg)}
+  .leaflet-container{background:var(--bg); font-family:'DM Sans',sans-serif}
+  .leaflet-tile-pane .leaflet-tile{
+    filter:brightness(.5) contrast(1.3) saturate(.5) sepia(.25) hue-rotate(175deg);
+  }
+  .leaflet-control-attribution{
+    background:rgba(8,12,20,.85)!important; color:var(--muted)!important; font-size:.65rem!important;
+  }
+  .leaflet-control-attribution a{color:var(--muted)!important}
+  .leaflet-control-zoom a{
+    background:var(--surface)!important; color:var(--text)!important; border-color:var(--border)!important;
+  }
+  .leaflet-interactive{cursor:pointer}
+
+  /* ── Panel ── */
+  #panel{
+    position:absolute; top:var(--header-h); right:0; bottom:0; width:var(--panel-w);
+    background:var(--surface); border-left:1px solid var(--border);
+    overflow-y:auto; overscroll-behavior:contain;
+    display:flex; flex-direction:column;
+  }
+  .sec{padding:1rem 1.1rem; border-bottom:1px solid var(--border)}
+  .sec:last-child{border-bottom:none}
+  .sec-title{
+    font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:.7rem;
+  }
+
+  /* district readout */
+  #d-empty{color:var(--muted); font-size:.85rem; line-height:1.6}
+  #d-body{display:none}
+  #d-body.on{display:block}
+  .d-num{font-family:'Jost',sans-serif; font-size:1.65rem; font-weight:700; line-height:1.1}
+  .d-party{
+    display:inline-flex; align-items:center; gap:.45rem; font-weight:700;
+    font-size:.9rem; margin:.5rem 0 .2rem;
+  }
+  .d-party .dot{width:.7rem; height:.7rem; border-radius:50%; flex:none}
+  .d-rep{font-size:1.05rem; font-weight:700; margin-bottom:.1rem}
+  .d-status{color:var(--muted); font-size:.82rem; margin-top:.35rem}
+  .d-notes{
+    margin-top:.7rem; padding-top:.7rem; border-top:1px solid var(--border);
+    color:var(--muted); font-size:.79rem; line-height:1.55;
+  }
+  .d-flag{
+    margin-top:.7rem; padding:.55rem .65rem; border-radius:7px;
+    background:rgba(214,69,80,.09); border:1px solid rgba(214,69,80,.3);
+    color:#e6a3a8; font-size:.74rem; line-height:1.5;
+  }
+  .d-open{
+    display:block; margin-top:.9rem; text-align:center; text-decoration:none;
+    background:var(--accent); color:#fff; font-weight:700; font-size:.85rem;
+    padding:.6rem .8rem; border-radius:8px;
+  }
+  .d-open:hover{background:var(--accent-hi)}
+
+  /* dates */
+  .date-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:.6rem;
+    padding:.4rem 0; border-bottom:1px dashed var(--border); font-size:.82rem;
+  }
+  .date-row:last-child{border-bottom:none}
+  .date-row .what{color:var(--muted)}
+  .date-row .when{font-weight:700; white-space:nowrap}
+  .date-row.past .when,.date-row.past .what{opacity:.45; text-decoration:line-through}
+  .date-row.soon .when{color:var(--accent-hi)}
+  .countdown{
+    margin-top:.7rem; padding:.6rem .7rem; border-radius:8px;
+    background:rgba(58,123,213,.1); border:1px solid rgba(58,123,213,.3);
+    font-size:.82rem; text-align:center;
+  }
+  .countdown b{font-size:1.05rem}
+
+  /* legend + tally */
+  .legend-row{display:flex; align-items:center; gap:.5rem; margin-bottom:.35rem; font-size:.8rem}
+  .legend-row:last-child{margin-bottom:0}
+  .swatch{width:.85rem; height:.85rem; border-radius:3px; flex:none}
+  .legend-row .label{color:var(--muted)}
+  .tally{display:flex; gap:.5rem; margin-bottom:.75rem}
+  .tally div{
+    flex:1; text-align:center; padding:.5rem .3rem; border-radius:8px;
+    border:1px solid var(--border); font-size:.75rem; color:var(--muted);
+  }
+  .tally b{display:block; font-size:1.2rem; font-family:'Jost',sans-serif; color:var(--text)}
+  .tally .r b{color:var(--rep)} .tally .d b{color:var(--dem)}
+  .fineprint{color:var(--muted); font-size:.71rem; line-height:1.5}
+  .fineprint a{color:var(--accent-hi)}
+
+  /* ── Mobile: panel becomes a bottom sheet ── */
+  @media (max-width:820px){
+    :root{--panel-w:0px}
+    #map{right:0; bottom:46vh}
+    #panel{
+      top:auto; bottom:0; left:0; right:0; width:auto; height:46vh;
+      border-left:none; border-top:1px solid var(--border);
+    }
+    header h1{font-size:.92rem}
+    header a.home{font-size:.75rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="home" href="https://jessestrait.com">&larr; jessestrait.com</a>
+  <h1>Texas Districts &mdash; 2026</h1>
+  <div class="maptoggle" role="group" aria-label="Which map to show">
+    <button id="btn-2025" class="active">2026 map</button>
+    <button id="btn-2021">2021 map</button>
+  </div>
+</header>
+
+<div id="map"></div>
+
+<aside id="panel">
+
+  <div class="sec">
+    <div class="sec-title">District</div>
+    <div id="d-empty">
+      Hover any district on the map to see who holds it and what the 2025 redraw
+      did to it. Click it to open the full district guide.
+    </div>
+    <div id="d-body">
+      <div class="d-num" id="d-num">&mdash;</div>
+      <div class="d-party" id="d-party"></div>
+      <div class="d-rep" id="d-rep"></div>
+      <div class="d-status" id="d-status"></div>
+      <div class="d-notes" id="d-notes"></div>
+      <div class="d-flag" id="d-flag" hidden></div>
+      <a class="d-open" id="d-open" href="#">Open full district guide &rarr;</a>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Key dates &mdash; Nov 2026 general</div>
+    <div id="dates"></div>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-title">Seats on this map</div>
+    <div class="tally" id="tally"></div>
+    <div class="legend-row"><span class="swatch" style="background:var(--rep)"></span><span class="label">Republican</span></div>
+    <div class="legend-row"><span class="swatch" style="background:var(--dem)"></span><span class="label">Democrat</span></div>
+    <div class="legend-row"><span class="swatch" style="background:var(--vacant)"></span><span class="label">Vacant / open</span></div>
+    <div class="fineprint" id="map-caveat"></div>
+  </div>
+
+  <div class="sec">
+    <div class="fineprint">
+      Boundaries: US Census Bureau TIGER/Line. Officeholders and race status
+      compiled from Ballotpedia, the Texas Tribune and news reporting &mdash; see
+      <code>data/reps.json</code>. Dates from the
+      <a href="https://www.votetexas.gov/" target="_blank" rel="noopener">Texas Secretary of State</a>.
+      Always confirm with your county elections office before you vote.
+    </div>
+  </div>
+
+</aside>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="city.js"></script>
+
+<script data-goatcounter="https://jesserstrait.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Raw TIGER/Line downloads — large, and rebuildable with tools/build_geojson.sh
+data/raw/
+.DS_Store

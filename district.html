@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>District &mdash; Texas 2026 Voting Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1623'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%235a9bf5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Jost:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080c14; --surface:#0f1623; --surface2:#131c2b; --border:#1e2a3a;
+    --text:#e8eef8; --muted:#7a8fa8; --accent:#3a7bd5; --accent-hi:#5a9bf5;
+    --rep:#d64550; --dem:#3a7bd5; --vacant:#6b7688;
+    --lib:#d6a645; --grn:#4aa96c; --ind:#9b7fd4;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; line-height:1.6}
+
+  header{
+    display:flex; align-items:center; gap:.9rem; padding:.75rem 1.1rem;
+    background:rgba(8,12,20,.94); border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
+  }
+  header a.back{
+    color:var(--muted); text-decoration:none; font-size:.85rem; font-weight:700;
+    border:1px solid var(--border); border-radius:6px; padding:.3rem .6rem; white-space:nowrap;
+  }
+  header a.back:hover{color:var(--text); border-color:var(--accent)}
+  header h1{font-family:'Jost',sans-serif; font-size:1.05rem; font-weight:700}
+  header .spacer{margin-left:auto}
+  header .mapname{color:var(--muted); font-size:.75rem; white-space:nowrap}
+
+  .wrap{max-width:900px; margin:0 auto; padding:1.5rem 1.1rem 4rem}
+
+  /* ── hero ── */
+  .hero{display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:1.5rem}
+  .hero-text{flex:1; min-width:230px}
+  .hero .num{font-family:'Jost',sans-serif; font-size:2.6rem; font-weight:700; line-height:1.05}
+  .hero .party{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; margin-top:.4rem}
+  .hero .party .dot{width:.8rem; height:.8rem; border-radius:50%}
+  .hero .rep{font-size:1.2rem; font-weight:700; margin-top:.5rem}
+  .hero .status{color:var(--muted); font-size:.9rem}
+
+  /* ── graphics ── */
+  .figs{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:2rem}
+  .fig{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:.85rem .9rem;
+  }
+  .fig h3{
+    font-family:'Jost',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.13em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:.5rem;
+  }
+  .fig svg{display:block; background:#0a0e17; border-radius:8px}
+  .fig .cap{color:var(--muted); font-size:.72rem; margin-top:.5rem; line-height:1.45}
+  .fig .cap .key{display:inline-flex; align-items:center; gap:.3rem; margin-right:.7rem}
+  .fig .cap .dash{
+    width:1.1rem; height:0; border-top:2px dashed var(--muted); display:inline-block;
+  }
+  .fig .cap .solid{width:1.1rem; height:.55rem; border-radius:2px; display:inline-block}
+
+  section{margin-bottom:2rem}
+  h2{
+    font-family:'Jost',sans-serif; font-size:.72rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+    margin-bottom:.8rem; padding-bottom:.4rem; border-bottom:1px solid var(--border);
+  }
+  p{margin-bottom:.8rem; font-size:.92rem}
+  .muted{color:var(--muted); font-size:.85rem}
+
+  /* ── ballot ── */
+  .race{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:1rem 1.1rem; margin-bottom:.9rem;
+  }
+  .race .office{
+    font-family:'Jost',sans-serif; font-size:1.02rem; font-weight:700;
+    display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+  }
+  .rating{
+    font-family:'DM Sans',sans-serif; font-size:.68rem; font-weight:700;
+    letter-spacing:.05em; text-transform:uppercase; padding:.18rem .45rem;
+    border-radius:4px; border:1px solid var(--border);
+  }
+  .rating.safe-r{background:rgba(214,69,80,.14); color:#e7949a; border-color:rgba(214,69,80,.35)}
+  .rating.safe-d{background:rgba(58,123,213,.14); color:#8fb8ef; border-color:rgba(58,123,213,.35)}
+  .rating.close{background:rgba(214,166,69,.14); color:#e3c07a; border-color:rgba(214,166,69,.4)}
+  .race .explain{
+    color:var(--muted); font-size:.83rem; margin:.4rem 0 .75rem; line-height:1.55;
+    border-left:2px solid var(--border); padding-left:.7rem;
+  }
+  .cand{
+    display:flex; align-items:center; gap:.6rem; padding:.5rem 0;
+    border-top:1px solid var(--border); font-size:.9rem; flex-wrap:wrap;
+  }
+  .cand .cnote{
+    flex-basis:100%; color:var(--muted); font-size:.76rem; line-height:1.5;
+    padding-left:1.2rem; margin-top:.1rem;
+  }
+  .cand .dot{width:.6rem; height:.6rem; border-radius:50%; flex:none}
+  .cand .nm{font-weight:700}
+  .cand .pty{color:var(--muted); font-size:.8rem}
+  .cand .inc{
+    font-size:.66rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    background:var(--surface2); border:1px solid var(--border); color:var(--muted);
+    padding:.1rem .4rem; border-radius:4px; margin-left:auto; white-space:nowrap;
+  }
+
+  details.jargon{margin-top:.6rem; border-top:1px solid var(--border); padding-top:.6rem}
+  details.jargon summary{
+    cursor:pointer; color:var(--accent-hi); font-size:.8rem; font-weight:700; list-style:none;
+  }
+  details.jargon summary::-webkit-details-marker{display:none}
+  details.jargon summary:before{content:"▸ "; }
+  details.jargon[open] summary:before{content:"▾ "; }
+  details.jargon .official{
+    margin-top:.5rem; padding:.6rem .7rem; background:#0a0e17; border-radius:7px;
+    font-size:.78rem; color:var(--muted); line-height:1.55; font-style:italic;
+  }
+  .yesno{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.6rem}
+  .yesno div{
+    padding:.55rem .65rem; border-radius:7px; font-size:.8rem; line-height:1.5;
+    border:1px solid var(--border);
+  }
+  .yesno .y{background:rgba(58,123,213,.08)}
+  .yesno .n{background:rgba(214,69,80,.07)}
+  .yesno b{display:block; margin-bottom:.15rem}
+
+  .date-row{
+    display:flex; justify-content:space-between; gap:1rem; padding:.55rem 0;
+    border-bottom:1px dashed var(--border); font-size:.9rem;
+  }
+  .date-row .when{font-weight:700; white-space:nowrap}
+  .date-row.past{opacity:.45}
+
+  .lookup{
+    display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+    font-weight:700; font-size:.88rem; padding:.65rem 1rem; border-radius:8px; margin-top:.3rem;
+  }
+  .lookup:hover{background:var(--accent-hi)}
+  a{color:var(--accent-hi)}
+  .pending{
+    background:var(--surface); border:1px dashed var(--border); border-radius:10px;
+    padding:1rem 1.1rem; color:var(--muted); font-size:.86rem;
+  }
+  .flagnote{
+    margin-top:.7rem; padding:.55rem .7rem; border-radius:7px;
+    background:rgba(214,69,80,.09); border:1px solid rgba(214,69,80,.3);
+    color:#e6a3a8; font-size:.76rem; line-height:1.5;
+  }
+
+  @media (max-width:720px){
+    .figs{grid-template-columns:1fr}
+    .yesno{grid-template-columns:1fr}
+    .hero .num{font-size:2.1rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">&larr; Map</a>
+  <h1 id="page-title">District</h1>
+  <span class="spacer"></span>
+  <span class="mapname" id="mapname"></span>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="num" id="d-num">District</div>
+      <div class="party" id="d-party"></div>
+      <div class="rep" id="d-rep"></div>
+      <div class="status" id="d-status"></div>
+    </div>
+  </div>
+
+  <div class="figs">
+    <div class="fig">
+      <h3>Where it is</h3>
+      <div id="fig-locator"></div>
+      <div class="cap" id="cap-locator"></div>
+    </div>
+    <div class="fig">
+      <h3>How the lines moved</h3>
+      <div id="fig-shape"></div>
+      <div class="cap" id="cap-shape"></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>What the 2025 redraw did here</h2>
+    <p id="d-notes" class="muted"></p>
+    <div class="flagnote" id="d-flag" hidden></div>
+  </section>
+
+  <section>
+    <h2>What&rsquo;s on your ballot</h2>
+    <div id="ballot"></div>
+  </section>
+
+  <section>
+    <h2>Key dates</h2>
+    <div id="dates"></div>
+  </section>
+
+  <section>
+    <h2>Where to vote</h2>
+    <p class="muted">
+      Polling places in Texas are run by each of the 254 counties, not by the
+      state or by congressional district, and most counties do not publish their
+      final Election Day locations until shortly before the election. The
+      authoritative lookup is your county elections office.
+    </p>
+    <a class="lookup" href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target="_blank" rel="noopener">
+      Look up your polling place &rarr;
+    </a>
+    <p class="muted" style="margin-top:.8rem">
+      Texas Secretary of State &mdash; My Voter Portal. Enter your name and county
+      to get your registration status, your districts, and your assigned
+      Election Day and early voting locations.
+    </p>
+  </section>
+
+</div>
+
+<script src="shape.js"></script>
+<script src="district.js"></script>
+<script data-goatcounter="https://jesserstrait.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

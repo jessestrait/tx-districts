@@ -1,0 +1,254 @@
+{
+  "_meta": {
+    "election_date": "2026-11-03",
+    "as_of": "2026-10-07",
+    "scope": "statewide — appears on every Texas ballot",
+    "ballot_order_note": "Offices are listed in the order they appear on the Texas Secretary of State's official sample ballot for the November 3, 2026 General Election. Individual counties set the left-to-right order of parties and may vary slightly, but the office sequence is fixed by Texas Election Code 52.091-52.092.",
+    "not_statewide_note": "U.S. Representative, State Board of Education member, State Senator, State Representative, the 1st-14th Courts of Appeals, and all district/county/precinct offices also appear on the November 3, 2026 ballot but are district-based, not statewide. The 15th Court of Appeals IS statewide and is included below.",
+    "primary_source": "Texas Secretary of State Ballot Certification Report for the 2026 November General Election (certified 2026-08-28) and the official SOS bilingual sample ballot."
+  },
+  "offices": [
+    {
+      "office": "United States Senator",
+      "what_it_does": "One of two U.S. senators representing all of Texas in Congress for a six-year term. Senators vote on federal legislation, the federal budget, treaties, and the confirmation of federal judges and executive-branch appointees, and serve on committees that oversee federal agencies. The seat is not tied to any district — every Texas voter votes in this race.",
+      "term_years": 6,
+      "seat_status": "Open seat. The incumbent, Republican John Cornyn, lost his party's primary runoff on May 26, 2026, and is not on the November ballot.",
+      "candidates": [
+        {"name": "Ken Paxton", "party": "R", "incumbent": false},
+        {"name": "James Talarico", "party": "D", "incumbent": false},
+        {"name": "Ted Brown", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Governor of Texas",
+      "what_it_does": "The state's chief executive, elected for a four-year term. The governor signs or vetoes bills passed by the Legislature (including line-item vetoes of budget items), calls special sessions, serves as commander-in-chief of the Texas military forces, and declares states of disaster. Much of the office's day-to-day power comes from appointments: the governor names the members of most state boards, commissions, and university regent boards, and fills judicial and executive vacancies between elections.",
+      "term_years": 4,
+      "seat_status": "Incumbent seeking re-election to a fourth term.",
+      "candidates": [
+        {"name": "Greg Abbott", "party": "R", "incumbent": true},
+        {"name": "Gina Hinojosa", "party": "D", "incumbent": false},
+        {"name": "Pat Dixon", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Lieutenant Governor of Texas",
+      "what_it_does": "Presides over the Texas Senate and is widely described as one of the most powerful offices in state government because of that role: the lieutenant governor appoints Senate committee chairs and members, assigns bills to committees, and controls which bills reach the Senate floor and when. The office also chairs the Legislative Budget Board and sits on the Legislative Redistricting Board. The lieutenant governor is elected separately from the governor — not as a ticket — and becomes governor if that office becomes vacant.",
+      "term_years": 4,
+      "seat_status": "Incumbent seeking re-election to a fourth term.",
+      "candidates": [
+        {"name": "Dan Patrick", "party": "R", "incumbent": true},
+        {"name": "Vikki Goodwin", "party": "D", "incumbent": false},
+        {"name": "Anthony Cristo", "party": "L", "incumbent": false},
+        {"name": "Kevin McCormick", "party": "G", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Attorney General of Texas",
+      "what_it_does": "The state's chief lawyer, elected for a four-year term. The attorney general represents Texas and its agencies in court, defends state laws against legal challenge, files suits on the state's behalf, and issues written legal opinions interpreting state law at the request of certain officials. The office also enforces consumer-protection and antitrust law, administers the state's child-support enforcement program, and rules on open-records disputes under the Public Information Act.",
+      "term_years": 4,
+      "seat_status": "Open seat. The incumbent, Republican Ken Paxton, did not seek re-election and is instead the Republican nominee for U.S. Senate.",
+      "candidates": [
+        {"name": "Mayes Middleton", "party": "R", "incumbent": false},
+        {"name": "Nathan Johnson", "party": "D", "incumbent": false},
+        {"name": "Tom Oxford", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Comptroller of Public Accounts",
+      "what_it_does": "The state's chief financial officer, tax collector, and revenue estimator, elected for a four-year term. Before each legislative session the comptroller issues the Biennial Revenue Estimate, which legally caps how much the Legislature may appropriate, and the comptroller must certify that the budget stays within available revenue. The office collects state sales and most other state taxes, acts as treasurer and accountant for the state, manages unclaimed property, and administers the state's college-savings and some retirement-adjacent programs.",
+      "term_years": 4,
+      "seat_status": "The Republican nominee currently holds the office by appointment. Elected comptroller Glenn Hegar resigned in 2025; Kelly Hancock served as acting comptroller and lost the 2026 Republican primary; Governor Abbott then appointed Don Huffines, the Republican nominee, who was sworn in on August 1, 2026. The November winner takes a full four-year term.",
+      "candidates": [
+        {"name": "Don Huffines", "party": "R", "incumbent": true},
+        {"name": "Sarah Eckhardt", "party": "D", "incumbent": false},
+        {"name": "V. Alonzo Echavarria-Garza", "party": "L", "incumbent": false},
+        {"name": "Shehla Faizi", "party": "G", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Commissioner of the General Land Office",
+      "what_it_does": "Manages roughly 13 million acres of state-owned land and mineral rights, plus the submerged lands of the Texas coast, and leases them for grazing, energy production, and other uses. Revenue from those leases flows into the Permanent School Fund, which helps pay for public education. The commissioner also runs the Texas Veterans Land Board (land, home, and home-improvement loans and state veterans homes and cemeteries), administers coastal protection and beach-access programs, oversees state-run disaster recovery and housing rebuild programs funded by federal grants, and chairs the board that maintains the Alamo.",
+      "term_years": 4,
+      "seat_status": "Incumbent seeking re-election to a second term.",
+      "candidates": [
+        {"name": "Dawn Buckingham", "party": "R", "incumbent": true},
+        {"name": "Benjamin Flores", "party": "D", "incumbent": false},
+        {"name": "Neill Snider", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Commissioner of Agriculture",
+      "what_it_does": "Heads the Texas Department of Agriculture for a four-year term. Despite the name, much of the office's work is regulatory and consumer-facing: it inspects and certifies the accuracy of gas pumps, grocery scales, and other weighing and measuring devices; licenses and regulates pesticide applicators; administers federal school-meal and summer-nutrition programs in Texas; runs agricultural marketing programs such as GO TEXAN; and oversees rural economic development and health-care grant programs.",
+      "term_years": 4,
+      "seat_status": "Open seat. The incumbent, Republican Sid Miller, lost the March 3, 2026 Republican primary and is not on the November ballot.",
+      "candidates": [
+        {"name": "Nate Sheets", "party": "R", "incumbent": false},
+        {"name": "Clayton Tucker", "party": "D", "incumbent": false},
+        {"name": "Austin R. Kelly", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Railroad Commissioner",
+      "what_it_does": "One of three members of the Texas Railroad Commission, elected statewide to staggered six-year terms, so one seat is normally on the ballot every two years. Despite the name, the commission no longer regulates railroads: it is the state's oil and gas regulator. It permits drilling, sets rules for well construction and plugging, regulates intrastate pipelines and natural-gas utility rates, oversees surface coal and uranium mining, and administers the program that plugs abandoned wells and cleans up related sites.",
+      "term_years": 6,
+      "seat_status": "Open seat. The incumbent in this seat, Republican Jim Wright, lost the May 26, 2026 Republican primary runoff and is not on the November ballot.",
+      "candidates": [
+        {"name": "Bo French", "party": "R", "incumbent": false},
+        {"name": "Jon Rosenthal", "party": "D", "incumbent": false},
+        {"name": "Arthur DiBianca", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Chief Justice, Supreme Court of Texas",
+      "what_it_does": "Texas splits its highest court in two: the Supreme Court of Texas is the court of last resort for civil and juvenile cases, and the Court of Criminal Appeals is the court of last resort for criminal cases. The Supreme Court has nine members elected statewide to six-year terms; it chooses which appeals to hear, writes binding interpretations of the Texas Constitution and state civil law, and sets the procedural rules used in Texas civil courts. The chief justice presides over the court, speaks for the judiciary to the Legislature, and chairs the Texas Judicial Council.",
+      "term_years": 6,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it. Chief Justice Nathan Hecht left the court at the end of 2024; Governor Abbott elevated sitting Justice Jimmy Blacklock to chief justice effective January 2025.",
+      "candidates": [
+        {"name": "Jimmy Blacklock", "party": "R", "incumbent": true},
+        {"name": "Maggie Ellis", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Justice, Supreme Court of Texas, Place 2 (Unexpired Term)",
+      "what_it_does": "One of nine seats on the Supreme Court of Texas, the state's highest court for civil and juvenile matters. Justices decide which civil appeals to take, issue binding interpretations of the Texas Constitution and state civil law, and adopt the rules of civil procedure. Because this is an unexpired term, the winner serves only the remainder of the term attached to Place 2, which runs through 2030 rather than a fresh six years; the seat is then up again in 2030.",
+      "term_years": 4,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it. The seat opened when Justice Jimmy Blacklock was elevated to chief justice; Governor Abbott appointed James P. Sullivan in January 2025.",
+      "candidates": [
+        {"name": "James P. Sullivan", "party": "R", "incumbent": true},
+        {"name": "Chari Kelly", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Justice, Supreme Court of Texas, Place 7",
+      "what_it_does": "One of nine seats on the Supreme Court of Texas, the state's highest court for civil and juvenile matters. Justices decide which civil appeals to take, issue binding interpretations of the Texas Constitution and state civil law, and adopt the rules of civil procedure. Elected statewide to a six-year term.",
+      "term_years": 6,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it. Justice Jeffrey S. Boyd left the seat and Governor Abbott appointed Kyle Hawkins in October 2025. Note that both nominees share the surname Hawkins and are not related to each other as a ticket; check first names carefully.",
+      "candidates": [
+        {"name": "Kyle Hawkins", "party": "R", "incumbent": true},
+        {"name": "Kristen Hawkins", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Justice, Supreme Court of Texas, Place 8",
+      "what_it_does": "One of nine seats on the Supreme Court of Texas, the state's highest court for civil and juvenile matters. Justices decide which civil appeals to take, issue binding interpretations of the Texas Constitution and state civil law, and adopt the rules of civil procedure. Elected statewide to a six-year term.",
+      "term_years": 6,
+      "seat_status": "Incumbent seeking re-election.",
+      "candidates": [
+        {"name": "Brett Busby", "party": "R", "incumbent": true},
+        {"name": "Gisela D. Triana", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Judge, Texas Court of Criminal Appeals, Place 3",
+      "what_it_does": "One of nine seats on the Texas Court of Criminal Appeals, the state's highest court for criminal cases, elected statewide to a six-year term. The court hears discretionary appeals in criminal cases, has mandatory jurisdiction over direct appeals in death-penalty cases, rules on post-conviction habeas corpus applications including actual-innocence and DNA claims, and adopts the rules of criminal appellate procedure. Its criminal rulings are final within Texas; only the U.S. Supreme Court can review them on federal grounds.",
+      "term_years": 6,
+      "seat_status": "Open seat. Incumbent Judge Bert Richardson did not seek re-election.",
+      "candidates": [
+        {"name": "Thomas Smith", "party": "R", "incumbent": false},
+        {"name": "Okey Anyiam", "party": "D", "incumbent": false},
+        {"name": "Mark Ash", "party": "L", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Judge, Texas Court of Criminal Appeals, Place 4",
+      "what_it_does": "One of nine seats on the Texas Court of Criminal Appeals, the state's court of last resort for criminal cases, elected statewide to a six-year term. The court reviews criminal convictions on discretionary appeal, handles direct appeals in death-penalty cases, decides post-conviction habeas corpus applications, and sets the rules of criminal appellate procedure.",
+      "term_years": 6,
+      "seat_status": "Incumbent seeking re-election.",
+      "candidates": [
+        {"name": "Kevin Patrick Yeary", "party": "R", "incumbent": true},
+        {"name": "Audra Riley", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Judge, Texas Court of Criminal Appeals, Place 9",
+      "what_it_does": "One of nine seats on the Texas Court of Criminal Appeals, the state's court of last resort for criminal cases, elected statewide to a six-year term. The court reviews criminal convictions on discretionary appeal, handles direct appeals in death-penalty cases, decides post-conviction habeas corpus applications, and sets the rules of criminal appellate procedure.",
+      "term_years": 6,
+      "seat_status": "Open seat. Incumbent Judge David Newell is retiring and did not seek re-election.",
+      "candidates": [
+        {"name": "John Messinger", "party": "R", "incumbent": false},
+        {"name": "Holly Taylor", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Chief Justice, Fifteenth Court of Appeals District",
+      "what_it_does": "The Fifteenth Court of Appeals is an intermediate appellate court created by the Legislature in 2023 and operational since September 2024. Unlike the other fourteen Texas courts of appeals, which cover geographic regions, this court has statewide jurisdiction over a defined subject area: civil appeals in which the State of Texas or a state agency or officer is a party, and challenges to state statutes and state agency actions. It sits in Austin, has three justices elected statewide to six-year terms, and its decisions can be appealed to the Supreme Court of Texas. 2026 is the first election for its seats; all three current members were appointed by Governor Abbott when the court was created.",
+      "term_years": 6,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it.",
+      "candidates": [
+        {"name": "Scott Brister", "party": "R", "incumbent": true},
+        {"name": "Jerry Zimmerer", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Justice, Fifteenth Court of Appeals District, Place 2",
+      "what_it_does": "One of three seats on the Fifteenth Court of Appeals, an intermediate appellate court with statewide — rather than regional — jurisdiction over civil appeals involving the State of Texas, state agencies and officers, and challenges to state laws and agency actions. Justices are elected statewide to six-year terms; the court's decisions can be appealed to the Supreme Court of Texas. 2026 is the first election for this seat.",
+      "term_years": 6,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it.",
+      "candidates": [
+        {"name": "Scott K. Field", "party": "R", "incumbent": true},
+        {"name": "Tom Baker", "party": "D", "incumbent": false}
+      ]
+    },
+    {
+      "office": "Justice, Fifteenth Court of Appeals District, Place 3",
+      "what_it_does": "One of three seats on the Fifteenth Court of Appeals, an intermediate appellate court with statewide — rather than regional — jurisdiction over civil appeals involving the State of Texas, state agencies and officers, and challenges to state laws and agency actions. Justices are elected statewide to six-year terms; the court's decisions can be appealed to the Supreme Court of Texas. 2026 is the first election for this seat.",
+      "term_years": 6,
+      "seat_status": "The incumbent holds the seat by appointment and is seeking election to it.",
+      "candidates": [
+        {"name": "April Farris", "party": "R", "incumbent": true},
+        {"name": "Marc M. Meyer", "party": "D", "incumbent": false}
+      ]
+    }
+  ],
+  "propositions": [],
+  "propositions_note": "There are no statewide ballot propositions or proposed constitutional amendments on the November 3, 2026 Texas ballot. Texas holds its constitutional amendment elections in odd-numbered years, after the Legislature's regular sessions: voters decided 17 statewide propositions on November 4, 2025, and the next regular amendment election is expected in November 2027. Three independent official checks confirm none in 2026: (1) Governor Abbott's August 10, 2026 proclamation ordering this election states its purpose solely as 'electing state and district officers, members of the Texas Legislature, and members of the United States Congress' — no constitutional amendments are submitted; (2) the Secretary of State's official bilingual sample ballot for November 3, 2026 contains only candidate races and no proposition section; (3) the Secretary of State's November 2026 election page publishes no explanatory statements for constitutional amendments, which state law requires whenever amendments are on a ballot. Note for the UI: individual cities, counties, school districts, and other local jurisdictions may still place LOCAL propositions (bonds, tax rates, charter amendments) on the same ballot — those are not statewide and vary by address.",
+  "sources": [
+    "https://www.sos.texas.gov/elections/laws/2026-november-general-election.shtml",
+    "https://www.sos.texas.gov/elections/forms/2026-ballot-cert.pdf",
+    "https://www.sos.state.tx.us/elections/forms/2026-sample-ballot.pdf",
+    "https://www.sos.texas.gov/elections/forms/2026-write-In-ballot-cert.pdf",
+    "https://www.sos.texas.gov/elections/forms/proclamation-general-election-2026.pdf",
+    "https://www.sos.state.tx.us/elections/candidates/guide/2026/offices2026.shtml",
+    "https://www.sos.texas.gov/elections/laws/advisory2026-22.shtml",
+    "https://www.sos.texas.gov/elections/laws/advisory2026-21-november-3-election-law-calendar.shtml",
+    "https://apps.texastribune.org/features/2026/texas-general-election-ballot-november-2026/",
+    "https://www.texastribune.org/2026/08/25/texas-general-election-november-2026-voter-guide/",
+    "https://www.texastribune.org/2026/08/01/don-huffines-sworn-in-as-texas-acting-comptroller-ahead-of-november-elections/",
+    "https://www.texastribune.org/2026/05/27/texas-railroad-commission-republican-primary-runoff-wright-french/",
+    "https://www.texastribune.org/2026/03/03/texas-primary-supreme-court-criminal-appeals/",
+    "https://www.texastribune.org/2026/09/25/texas-governor-2026-guide-abbott-hinojosa/",
+    "https://en.wikipedia.org/wiki/2026_Texas_elections",
+    "https://en.wikipedia.org/wiki/2026_Texas_gubernatorial_election",
+    "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Texas",
+    "https://en.wikipedia.org/wiki/2026_Texas_Supreme_Court_election",
+    "https://en.wikipedia.org/wiki/2026_Texas_Land_Commissioner_election",
+    "https://en.wikipedia.org/wiki/2026_Texas_Commissioner_of_Agriculture_election",
+    "https://en.wikipedia.org/wiki/2026_Texas_Comptroller_of_Public_Accounts_election",
+    "https://en.wikipedia.org/wiki/2026_Texas_lieutenant_gubernatorial_election",
+    "https://en.wikipedia.org/wiki/2025_Texas_constitutional_amendment_election",
+    "https://ballotpedia.org/Texas_elections,_2026",
+    "https://ballotpedia.org/Texas_Fifteenth_District_Court_of_Appeals",
+    "https://ballotpedia.org/James_Sullivan_(Texas)",
+    "https://www.houstonchronicle.com/projects/2026/houston-texas-november-election-voter-guide/",
+    "https://www.houstonchronicle.com/politics/election/2026/article/comptroller-primary-results-21329222.php",
+    "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/03/03/545125/texas-rep-gina-hinojosa-wins-democratic-nomination-will-face-gov-greg-abbott-in-november/",
+    "https://www.keranews.org/elections-2026/2026-03-03/texas-supreme-court-election-results-criminal-appeals-15th-court-appeals",
+    "https://sanantonioreport.org/texas-new-15th-court-of-appeals-2026/",
+    "https://www.votedenton.gov/wp-content/uploads/2026/09/1126-Active-Contest-List.pdf",
+    "https://texas2036.org/posts/tx-constitutional-amendment-election-what-you-need-to-know/"
+  ],
+  "sourcing_flags": [
+    "CONFIDENCE: HIGH on every candidate name and party. Each was taken from the Texas Secretary of State's official Ballot Certification Report for the 2026 November General Election (certified 2026-08-28, 1,396 pages, which prints an explicit party code — REP / DEM / LIB / GRE — beside each name), then checked against the SOS bilingual sample ballot, and then against at least one independent outlet (Texas Tribune, Houston Chronicle, KERA, Houston Public Media, Wikipedia, or Ballotpedia). No name or party in this file is inferred.",
+    "Name spellings and capitalization follow the SOS sample ballot (the certification report is all-caps). 'V. Alonzo Echavarria-Garza', 'Kevin Patrick Yeary', 'Scott K. Field', 'Marc M. Meyer', and 'Gisela D. Triana' are the certified ballot forms.",
+    "Supreme Court Place 7 pits Kyle Hawkins (R) against Kristen Hawkins (D) — same surname, unrelated candidacies. Flagging because it is an easy transcription error and an easy voter error.",
+    "COMPTROLLER INCUMBENCY IS NUANCED: Don Huffines is marked incumbent:true because he currently holds the office, but by appointment (sworn in 2026-08-01), not election. He was never elected comptroller. Elected comptroller Glenn Hegar resigned in 2025; Kelly Hancock was acting comptroller and lost the 2026 GOP primary to Huffines. If your UI renders 'incumbent' as 'currently serving', this is correct; if it renders it as 'elected to this office before', suppress the badge here.",
+    "Four other candidates are marked incumbent:true while holding their seats by gubernatorial appointment rather than prior election: Jimmy Blacklock (elevated to Chief Justice, Jan 2025), James P. Sullivan (Supreme Court Place 2, Jan 2025), Kyle Hawkins (Supreme Court Place 7, Oct 2025), and all three Fifteenth Court of Appeals justices — Scott Brister, Scott K. Field, April Farris — who were appointed when the court was created in 2024 and are standing for election for the first time.",
+    "Supreme Court Place 2 is an UNEXPIRED TERM. term_years is 4, not 6: the winner finishes the term attached to that seat, which runs through 2030. Confirmed via Ballotpedia, which lists the seat's next election as November 5, 2030.",
+    "Certified declared WRITE-IN candidates exist for three statewide offices and are NOT printed on the ballot, so they are omitted from the candidates arrays above. Per the SOS Certified List of Write-In Candidates (2026-08-28): U.S. Senator — Avery Ayers, Bradford 'Brad' Hall, Zul Mohamed, Jade Simmons; Governor — Edward Earl Giles, Jenn Mack, Jinghpaw Majoishingra, Mike Miller; Lieutenant Governor — Arturo Espinosa, Stephen Samuelson. A write-in vote counts only for a candidate on this certified list. Consider surfacing this as a footnote rather than as ballot lines.",
+    "No independent (unaffiliated, ballot-printed) candidates qualified for any statewide office; the Independent column on the official sample ballot is empty for every statewide race. The party enum 'I' is therefore unused in this file.",
+    "Democratic Land Commissioner nominee Benjamin Flores announced a leukemia diagnosis on 2026-06-12 and paused campaign travel; his campaign stated he remains an active candidate and on the ballot. Reported by one outlet chain (Wikipedia citing local coverage) — thin sourcing, and a candidate's health status can change. Verify before publishing any commentary on it; the ballot listing itself is certified and correct.",
+    "The ballot certification report was certified 2026-08-28. Texas law permits late ballot changes for candidate death, withdrawal, or ineligibility. As of 2026-10-07 no such change is reported for a statewide race, but the file should be re-checked against the SOS page shortly before the election if it stays live.",
+    "This file is statewide only. The State Board of Education, Texas Senate (16 of 31 seats), all 150 Texas House seats, all 38 U.S. House seats, the 1st-14th Courts of Appeals, and local offices and LOCAL propositions also appear on November 3, 2026 ballots but vary by address and are out of scope here.",
+    "Ballotpedia pages resisted automated fetching during this research; its content was reached through search-result summaries rather than direct page reads. Every fact attributed to it here is also supported by an SOS document or an independent news source, so nothing in this file rests on Ballotpedia alone."
+  ]
+}

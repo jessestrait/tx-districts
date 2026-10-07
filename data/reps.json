@@ -1,0 +1,535 @@
+{
+ "_meta": {
+  "description": "Texas U.S. House delegation under two maps: the 2021-enacted map (CD118FP numbering, used 2022/2024, still the current map of record as of this writing) and the 2025-enacted map (CD119FP numbering, signed Aug 29 2025, upheld by SCOTUS Dec 4 2025, governs the Nov 3 2026 election). District keys are plain strings '1'-'38' matching GEOID = '48' + 2-digit district number.",
+  "as_of": "2026-10-07",
+  "confidence_notes": "See 'sourcing_flags' for districts where reporting was thin, conflicting, or time-sensitive (e.g. pending special elections)."
+ },
+ "map_2021": {
+  "1": {
+   "rep": "Nathaniel Moran",
+   "party": "R",
+   "first_elected": 2023,
+   "notes": ""
+  },
+  "2": {
+   "rep": "Dan Crenshaw",
+   "party": "R",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "3": {
+   "rep": "Keith Self",
+   "party": "R",
+   "first_elected": 2023,
+   "notes": ""
+  },
+  "4": {
+   "rep": "Pat Fallon",
+   "party": "R",
+   "first_elected": 2020,
+   "notes": ""
+  },
+  "5": {
+   "rep": "Lance Gooden",
+   "party": "R",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "6": {
+   "rep": "Jake Ellzey",
+   "party": "R",
+   "first_elected": 2021,
+   "notes": "Won a July 2021 special election after Rep. Ron Wright died in office."
+  },
+  "7": {
+   "rep": "Lizzie Fletcher",
+   "party": "D",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "8": {
+   "rep": "Morgan Luttrell",
+   "party": "R",
+   "first_elected": 2023,
+   "notes": ""
+  },
+  "9": {
+   "rep": "Al Green",
+   "party": "D",
+   "first_elected": 2004,
+   "notes": ""
+  },
+  "10": {
+   "rep": "Michael McCaul",
+   "party": "R",
+   "first_elected": 2004,
+   "notes": ""
+  },
+  "11": {
+   "rep": "August Pfluger",
+   "party": "R",
+   "first_elected": 2021,
+   "notes": ""
+  },
+  "12": {
+   "rep": "Craig Goldman",
+   "party": "R",
+   "first_elected": 2024,
+   "notes": ""
+  },
+  "13": {
+   "rep": "Ronny Jackson",
+   "party": "R",
+   "first_elected": 2021,
+   "notes": ""
+  },
+  "14": {
+   "rep": "Randy Weber",
+   "party": "R",
+   "first_elected": 2012,
+   "notes": ""
+  },
+  "15": {
+   "rep": "Monica De La Cruz",
+   "party": "R",
+   "first_elected": 2022,
+   "notes": ""
+  },
+  "16": {
+   "rep": "Veronica Escobar",
+   "party": "D",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "17": {
+   "rep": "Pete Sessions",
+   "party": "R",
+   "first_elected": 1996,
+   "notes": "First elected to the House in 1996 representing a different Dallas-based district (served 1997-2019); lost re-election in 2018, then won TX-17 in 2020 and has served there since January 2021."
+  },
+  "18": {
+   "rep": "Christian Menefee",
+   "party": "D",
+   "first_elected": 2026,
+   "notes": "Seat vacant Mar-Nov 2025 after Rep. Sylvester Turner (D, first elected to this seat 2024) died in office March 5, 2025. Menefee won the special election runoff Jan 31, 2026 (sworn in Feb 2, 2026) to serve the remainder of Turner's term. Turner had succeeded longtime Rep. Sheila Jackson Lee, who lost the March 2024 Democratic primary for this seat."
+  },
+  "19": {
+   "rep": "Jodey Arrington",
+   "party": "R",
+   "first_elected": 2016,
+   "notes": ""
+  },
+  "20": {
+   "rep": "Joaquin Castro",
+   "party": "D",
+   "first_elected": 2012,
+   "notes": ""
+  },
+  "21": {
+   "rep": "Chip Roy",
+   "party": "R",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "22": {
+   "rep": "Troy Nehls",
+   "party": "R",
+   "first_elected": 2021,
+   "notes": ""
+  },
+  "23": {
+   "rep": null,
+   "party": "R",
+   "first_elected": null,
+   "notes": "Vacant since Rep. Tony Gonzales (R, first elected 2020) resigned in April 2026 amid a staffer-misconduct scandal. A special election to fill the remainder of the term was pending/underway as of this writing, alongside the regular Nov 2026 general; leading candidates reported as Brandon Herrera (R) and Katy Padilla Stout (D)."
+  },
+  "24": {
+   "rep": "Beth Van Duyne",
+   "party": "R",
+   "first_elected": 2021,
+   "notes": ""
+  },
+  "25": {
+   "rep": "Roger Williams",
+   "party": "R",
+   "first_elected": 2012,
+   "notes": ""
+  },
+  "26": {
+   "rep": "Brandon Gill",
+   "party": "R",
+   "first_elected": 2024,
+   "notes": ""
+  },
+  "27": {
+   "rep": "Michael Cloud",
+   "party": "R",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "28": {
+   "rep": "Henry Cuellar",
+   "party": "D",
+   "first_elected": 2004,
+   "notes": ""
+  },
+  "29": {
+   "rep": "Sylvia Garcia",
+   "party": "D",
+   "first_elected": 2018,
+   "notes": ""
+  },
+  "30": {
+   "rep": "Jasmine Crockett",
+   "party": "D",
+   "first_elected": 2022,
+   "notes": ""
+  },
+  "31": {
+   "rep": "John Carter",
+   "party": "R",
+   "first_elected": 2002,
+   "notes": ""
+  },
+  "32": {
+   "rep": "Julie Johnson",
+   "party": "D",
+   "first_elected": 2024,
+   "notes": ""
+  },
+  "33": {
+   "rep": "Marc Veasey",
+   "party": "D",
+   "first_elected": 2012,
+   "notes": ""
+  },
+  "34": {
+   "rep": "Vicente Gonzalez",
+   "party": "D",
+   "first_elected": 2016,
+   "notes": "First elected to the House in 2016 (TX-15); moved to TX-34 in 2023 under the 2021 redistricting cycle and has represented it since."
+  },
+  "35": {
+   "rep": "Greg Casar",
+   "party": "D",
+   "first_elected": 2022,
+   "notes": ""
+  },
+  "36": {
+   "rep": "Brian Babin",
+   "party": "R",
+   "first_elected": 2014,
+   "notes": ""
+  },
+  "37": {
+   "rep": "Lloyd Doggett",
+   "party": "D",
+   "first_elected": 1994,
+   "notes": ""
+  },
+  "38": {
+   "rep": "Wesley Hunt",
+   "party": "R",
+   "first_elected": 2022,
+   "notes": ""
+  }
+ },
+ "map_2025": {
+  "1": {
+   "incumbent_or_favored": "Nathaniel Moran",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Boundaries essentially unchanged; safe R hold."
+  },
+  "2": {
+   "incumbent_or_favored": "Steve Toth",
+   "party": "R",
+   "status": "incumbent displaced",
+   "notes": "Redistricting reshaped this Houston-area seat; incumbent Rep. Dan Crenshaw (R) lost the March 2026 GOP primary to state Rep. Steve Toth, becoming the only Texas incumbent of either party to lose renomination outright (as opposed to being redrawn into another district). Toth is the 2026 Republican nominee."
+  },
+  "3": {
+   "incumbent_or_favored": "Keith Self",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Minor boundary changes; safe R hold."
+  },
+  "4": {
+   "incumbent_or_favored": "Pat Fallon",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "5": {
+   "incumbent_or_favored": "Lance Gooden",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "6": {
+   "incumbent_or_favored": "Jake Ellzey",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "7": {
+   "incumbent_or_favored": "Lizzie Fletcher",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "Houston-area lines were reshuffled substantially in the broader redraw, but Fletcher's seat emerged with its Democratic lean intact; she won her primary unopposed."
+  },
+  "8": {
+   "incumbent_or_favored": "Jessica Hart Steinmann",
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Morgan Luttrell (R) is retiring. District lines barely changed (still roughly Trump+28) and remain Solid R. Steinmann won the GOP nomination; Laura Jones is the Democratic nominee."
+  },
+  "9": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "One of the 5 Democratic-held seats the map was built to flip. Old TX-9 (Al Green, D) was redrawn from roughly D+44 to roughly R+20. Green did not run here; he moved to run in the new TX-18 (see below) and lost that primary. No incumbent contested the new TX-9; it drew 15+ candidates combined across both primaries."
+  },
+  "10": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Michael McCaul (R) is retiring. New lines shift the district to include more of Austin but it remains solidly Republican (Trump ~60.5% in 2024 under the new boundaries). Large multi-candidate GOP primary field."
+  },
+  "11": {
+   "incumbent_or_favored": "August Pfluger",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "12": {
+   "incumbent_or_favored": "Craig Goldman",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "13": {
+   "incumbent_or_favored": "Ronny Jackson",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "14": {
+   "incumbent_or_favored": "Randy Weber",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "15": {
+   "incumbent_or_favored": "Monica De La Cruz",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Redrawn to add southeastern Hidalgo County and part of the Coastal Bend; still R-favored on paper (Trump +18 in 2024) but polling has shown an unexpectedly close race against Democrat Bobby Pulido."
+  },
+  "16": {
+   "incumbent_or_favored": "Veronica Escobar",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "Escobar successfully pushed to keep Biggs Army Airfield and El Paso International Airport within the district; largely unchanged Democratic hold."
+  },
+  "17": {
+   "incumbent_or_favored": "Pete Sessions",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "18": {
+   "incumbent_or_favored": "Christian Menefee",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "Rep. Al Green (D, redrawn out of old TX-9) moved here and challenged Menefee; Menefee defeated Green in the May 26, 2026 Democratic primary runoff (about 69% to 31%), ending Green's two-decade House tenure. Remains a safe Democratic seat."
+  },
+  "19": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Jodey Arrington (R) is retiring. Safe Republican seat; Abraham Enriquez and Tom Sell headed to a GOP primary runoff."
+  },
+  "20": {
+   "incumbent_or_favored": "Joaquin Castro",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "Redrawn to encompass nearly all of downtown San Antonio rather than just the West Side; remains a safe Democratic seat."
+  },
+  "21": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Chip Roy (R) opted to run for Texas Attorney General rather than seek re-election, triggering the district's first open race since 2018. Partisan lean essentially unchanged (~Trump+60). 12-13 candidate GOP primary; Mark Teixeira and Trey Trainor drew the most attention."
+  },
+  "22": {
+   "incumbent_or_favored": "Trever Nehls",
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Troy Nehls (R) is retiring; his identical twin brother Trever Nehls is the Republican nominee, facing Democrat Marquette Greene-Scott. Safe R seat (~R+64 by one state partisan index)."
+  },
+  "23": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "vacant seat \u2014 no special election called",
+   "notes": "Seat vacant since Rep. Tony Gonzales (R) resigned April 13, 2026 amid a staffer-misconduct scandal. Gonzales had already ended his primary campaign on March 5, which cancelled the runoff and made Brandon Herrera the Republican nominee. Governor Abbott never called a special election, so the seat stays vacant until the winner of the November 3 general election is sworn in in January 2027. Redrawn under the new map as a majority-Hispanic, Trump+15 district."
+  },
+  "24": {
+   "incumbent_or_favored": "Beth Van Duyne",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Suburban Dallas district changed only slightly; safe R hold."
+  },
+  "25": {
+   "incumbent_or_favored": "Roger Williams",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "26": {
+   "incumbent_or_favored": "Brandon Gill",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "27": {
+   "incumbent_or_favored": "Michael Cloud",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold; Cloud won his primary decisively."
+  },
+  "28": {
+   "incumbent_or_favored": "Henry Cuellar",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "One of the 5 Democratic-held seats targeted to flip R (lean shifted from roughly R+7 to roughly R+10). Cuellar, under federal bribery indictment for part of this period (later pardoned by President Trump), is running for re-election against Republican Webb County Judge Tano Tijerina; the race was rated more competitive for Democrats after the pardon."
+  },
+  "29": {
+   "incumbent_or_favored": "Sylvia Garcia",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "Redrawn so Black voters likely outnumber Latino voters in the Democratic primary; Garcia (Houston's only Latina member of Congress) won renomination with about 58% over former state Rep. Jarvis Johnson. Remains Democratic-held."
+  },
+  "30": {
+   "incumbent_or_favored": "Frederick D. Haynes III",
+   "party": "D",
+   "status": "new/open seat",
+   "notes": "Open seat: Rep. Jasmine Crockett (D) left it to run for the U.S. Senate. Dallas pastor Frederick D. Haynes III won the March 3, 2026 Democratic primary outright with about 72%, and faces Republican Everett Jackson in November. Safely Democratic."
+  },
+  "31": {
+   "incumbent_or_favored": "John Carter",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "32": {
+   "incumbent_or_favored": "Jace Yarbrough",
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Entirely reconfigured as a rural/exurban North/East Texas seat (Camp, part of Collin, part of Dallas, part of Hunt, Rains, Rockwall, Upshur, Wood counties), shifting from roughly D+13 to strongly Republican. Former incumbent Rep. Julie Johnson (D) was drawn out and instead ran in the new TX-33 (see below), where she lost her primary; no incumbent contested the new TX-32. Yarbrough became the GOP nominee after a scheduled runoff opponent withdrew."
+  },
+  "33": {
+   "incumbent_or_favored": "Colin Allred",
+   "party": "D",
+   "status": "two incumbents paired",
+   "notes": "One of the 5 seats targeted to flip R, but the new map kept a Dallas-anchored Democratic seat here (moved from a Tarrant County base). Original incumbent Rep. Marc Veasey (D) declined to run because his home is no longer in the district, and instead ran (unsuccessfully) for Tarrant County judge. Displaced TX-32 incumbent Rep. Julie Johnson (D) ran here instead but lost the May 26, 2026 Democratic runoff to former Rep./2024 Senate candidate Colin Allred, who is the Democratic nominee for a seat still expected to lean Democratic."
+  },
+  "34": {
+   "incumbent_or_favored": "Vicente Gonzalez",
+   "party": "D",
+   "status": "incumbent running",
+   "notes": "One of the 5 seats targeted to flip R; new lines move the district from roughly even to Trump 55%-44% (2024) by removing Hidalgo County territory around McAllen and adding Nueces/coastal-area territory. Gonzalez is running for re-election and faces a third matchup against former Rep. Mayra Flores (R)."
+  },
+  "35": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "One of the 5 seats targeted to flip R (from roughly D+19 to roughly R+10), stripped of its Austin/Travis County core and reconstituted around Bexar (part), Guadalupe, Karnes, and Wilson counties. Original incumbent Rep. Greg Casar (D) was drawn out and chose to run in the new TX-37 instead (see below); no Democratic incumbent contested this seat, which drew a large multi-candidate GOP primary field."
+  },
+  "36": {
+   "incumbent_or_favored": "Brian Babin",
+   "party": "R",
+   "status": "incumbent running",
+   "notes": "Safe R hold."
+  },
+  "37": {
+   "incumbent_or_favored": "Greg Casar",
+   "party": "D",
+   "status": "incumbent displaced",
+   "notes": "Consolidated Casar's old TX-35 (Austin) with Lloyd Doggett's TX-37; the new district is centered almost entirely on Travis County/Austin. Doggett (D), 79, announced he would not seek re-election after the Supreme Court upheld the map, rather than face Casar in a primary; Casar won renomination easily and remains the clear favorite in this safely Democratic seat."
+  },
+  "38": {
+   "incumbent_or_favored": null,
+   "party": "R",
+   "status": "new/open seat",
+   "notes": "Rep. Wesley Hunt (R) ran for U.S. Senate instead of re-election (placed third in the March 2026 GOP Senate primary behind John Cornyn and Ken Paxton). A 12-candidate Republican primary determined his successor for this safely Republican Houston-area seat; district lines changed only modestly."
+  }
+ },
+ "sourcing_flags": {
+  "weak_or_conflicting": [
+   "17 (map_2021 first_elected): Sources agree Pete Sessions first won House election in 1996 for a different, now-defunct district number, lost in 2018, then won TX-17 starting with the 2020 election. The 'first_elected' value (1996) reflects career start, not tenure in this specific seat/district number -- flagging in case the UI wants 'first elected to this district' instead (which would be 2020/2021).",
+   "34 (map_2021 first_elected): Vicente Gonzalez first won a House seat (TX-15) in 2016, then moved to TX-34 under the prior (2021) redistricting cycle starting with the 2022 election. Same career-start-vs-this-district ambiguity as TX-17.",
+   "32/33 (map_2025): The Julie Johnson / Marc Veasey / Colin Allred 'musical chairs' is confirmed by multiple outlets, but secondary aggregator sources gave inconsistent counts of exactly how many Texas districts counted as 'open' for 2026 (seen figures of 10 and 11), suggesting differing definitions of 'open' (e.g., whether a displaced-but-running incumbent who later loses a primary counts). The per-district facts above are sourced individually rather than relying on those aggregate counts.",
+   "9/18: Multiple sources were consistent that Al Green was redistricted out of TX-9 into TX-18 and lost the primary there, but I did not find a single authoritative source giving the full new-TX-9 candidate field, since it was not required to establish party/status.",
+   "23: corrected 2026-10-07 \u2014 an earlier draft of this file said a special election was pending. It was not: Abbott never called one, and the seat stays vacant until January 2027.",
+   "30: corrected 2026-10-07 \u2014 this file previously named Venton Jones; three independent sources give the 2026 Democratic nominee as Frederick D. Haynes III for this open seat."
+  ],
+  "well_sourced": "All other districts in both maps were corroborated by at least two independent sources (a mix of Wikipedia district/election pages, Ballotpedia race/incumbent pages, and news coverage from Texas Tribune, Houston Chronicle/Public Media, KUT, Axios, NBC News, CBS News, Fox News, and local outlets)."
+ },
+ "sources": [
+  "https://en.wikipedia.org/wiki/List_of_United_States_representatives_from_Texas",
+  "https://ballotpedia.org/List_of_United_States_Representatives_from_Texas",
+  "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+  "https://en.wikipedia.org/wiki/Texas%27s_9th_congressional_district",
+  "https://en.wikipedia.org/wiki/Texas%27s_28th_congressional_district",
+  "https://en.wikipedia.org/wiki/Texas%27s_32nd_congressional_district",
+  "https://en.wikipedia.org/wiki/Texas%27s_34th_congressional_district",
+  "https://en.wikipedia.org/wiki/Texas%27s_35th_congressional_district",
+  "https://en.wikipedia.org/wiki/Texas%27s_37th_congressional_district",
+  "https://www.texastribune.org/2025/08/18/texas-redistricting-maps-charts-analysis/",
+  "https://news.ballotpedia.org/2026/04/22/tony-gonzales-resignation-leaves-texas-23rd-congressional-district-vacant/",
+  "https://www.texastribune.org/2026/06/09/screwworm-texas-vacant-congressional-district-gonzales-herrera-padilla-stout/",
+  "https://www.nbcnews.com/politics/elections/democrat-christian-menefee-wins-special-election-vacant-deep-blue-hous-rcna255932",
+  "https://www.texastribune.org/2026/05/26/texas-18th-congressional-district-democratic-runoff-al-green-christian-menefee/",
+  "https://news.ballotpedia.org/2026/05/27/incumbent-christian-menefee-d-defeated-incumbent-al-green-d-in-the-democratic-primary-runoff-for-texas-18th-congressional-district-on-may-26-2026/",
+  "https://www.click2houston.com/news/texas/2025/12/03/despite-bribery-charges-many-democrats-still-favor-henry-cuellar-to-hold-his-laredo-district/",
+  "https://centerforpolitics.org/crystalball/after-trump-pardons-cuellar-tx-28-moves-to-leans-democratic/",
+  "https://www.texastribune.org/2026/09/09/henry-cuellar-tano-tijerina-south-texas-28th-congressional-district-laredo/",
+  "https://sanantonioreport.org/profile/vicente-gonzalez-2026-candidate-for-texas-34th-congressional-district/",
+  "https://riograndeguardian.com/vicente-gonzalezs-district-becomes-gop-leaning-under-new-redistricting-plan/",
+  "https://www.krgv.com/news/former-gop-rep-mayra-flores-switches-districts-to-challenge-rep-vicente-gonzalez-for-third-time/",
+  "https://www.texastribune.org/2026/05/26/texas-colin-allred-julie-johnson-congress-district-33-democratic-primary-runoff/",
+  "https://www.keranews.org/elections-2026/2026-03-04/congress-district-33-results-democratic-primary-julie-johnson-colin-allred-runoff",
+  "https://legis1.com/news/the-race-for-texass-33rd-how-redistricting-killed-a-career-and-left-a-gop-primary-running-on-fumes/",
+  "https://thetexan.news/elections/2026/austin-congressman-greg-casar-announces-bid-for-newly-drawn-37th-congressional-district/article_29b7c26e-2859-4804-99cb-3eac6f2d0b27.html",
+  "https://www.washingtonexaminer.com/politics/3498301/greg-casar-primary-doggett-declining-run-newly-drawn-texas-district/",
+  "https://thetexan.news/elections/2026/lloyd-doggett-to-not-run-for-re-election-if-texas-congressional-redistricting-succeeds/article_e310a974-9393-4cb0-8e12-f4a349e4ac1e.html",
+  "https://sanantonioreport.org/rep-chip-roy-attorney-general-bid-sets-up-open-race-in-deep-red-tx21/",
+  "https://www.kut.org/politics/2026-02-21/texas-congressional-district-21-chip-roy-primary-election-candidates-guide",
+  "https://www.houstonchronicle.com/politics/election/2026/article/district-29-primary-results-21342906.php",
+  "https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/03/04/545172/democratic-primary-election-results-houston-29th-sylvia-garcia/",
+  "https://www.houstonpublicmedia.org/articles/news/politics/2025/10/23/534072/this-newly-drawn-houston-district-could-unearth-tensions-between-democrats-of-color/",
+  "https://thetexan.news/federal/texas-congressman-morgan-luttrell-will-not-seek-re-election-in-2026/article_1901bee8-4f09-4563-87e4-763464452e97.html",
+  "https://thetexan.news/elections/2026/six-republicans-seek-party-nomination-to-replace-luttrell-in-houston-area-congressional-seat/article_9b007d85-7ab4-4bba-92d8-c4d6be8a27ca.html",
+  "https://thehill.com/homenews/house/5502593-rep-mccaul-wont-seek-re-election/",
+  "https://thetexan.news/elections/2026/republicans-compete-for-10th-congressional-district-being-vacated-by-michael-mccaul/",
+  "https://news.ballotpedia.org/2025/11/12/rep-jodey-arrington-becomes-the-sixth-member-of-texas-congressional-delegation-to-announce-their-retirement/",
+  "https://abc13.com/post/us-rep-troy-nehls-is-latest-leave-open-seat-congress-new-faces-will-represent-southeast-texas-2026/18237779/",
+  "https://thetexan.news/elections/2026/congressman-troy-nehls-forgoes-re-election-becoming-fourth-gop-retirement/article_f976907f-21bf-4607-9067-62cde35d8f76.html",
+  "https://www.texastribune.org/2026/10/06/texas-2026-elections-competitive-races-us-congress-state-legislature/",
+  "https://www.texastribune.org/2026/08/05/texas-dccc-adds-tony-gonzales-congressional-district-target-list-2026-house/",
+  "https://news.ballotpedia.org/2025/10/08/rep-wesley-hunt-becomes-the-11th-u-s-house-member-who-is-running-for-the-u-s-senate-in-2026/",
+  "https://thetexan.news/elections/2026/republicans-vie-for-houston-area-congressional-seat-after-wesley-hunt-runs-for-u-s-senate/article_1d6d3dc3-fb02-4ec3-9ff9-2b5d70d7f8e9.html",
+  "https://www.houstonpublicmedia.org/articles/news/politics/elections/2026/01/05/539532/crockett-talarico-senate-primary-election-texas/",
+  "https://19thnews.org/2026/03/texas-us-senate-primary-election-results-2026/",
+  "https://www.houstonchronicle.com/politics/election/2026/article/district-2-primary-results-21342902.php",
+  "https://www.cbsnews.com/news/texas-primary-midterm-2026-second-congressional-district-results-dan-crenshaw-steve-toth/",
+  "https://www.foxnews.com/politics/dan-crenshaw-defeated-cruz-backed-state-lawmaker-texas-gop-primary-boosting-maga-clout",
+  "https://www.foxnews.com/politics/10-house-incumbent-lawmakers-who-saw-2026-re-election-bids-end-primary-defeat",
+  "https://www.axios.com/local/dallas/2026/02/12/texas-congress-district-32-primary",
+  "https://thetexan.news/elections/2026/texas-redrawn-gop-favored-congressional-district-32-has-seven-republican-contenders-so-far/article_87043a4a-637d-4fd7-be8f-0d2a7186bead.html",
+  "https://www.texastribune.org/2026/01/22/32nd-congressional-district-republican-primary-north-texas-2026-election/",
+  "https://ballotpedia.org/Texas'_27th_Congressional_District_election,_2026",
+  "https://www.votebeat.org/texas/2025/12/05/texas-redistricting-ruling-supreme-court-map-2026-midterms/",
+  "https://www.kut.org/politics/2025-12-04/texas-congressional-maps-supreme-court-ruling-2026-midterms"
+ ]
+}

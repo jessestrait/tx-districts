@@ -1,0 +1,771 @@
+{
+ "_meta": {
+  "election_date": "2026-11-03",
+  "as_of": "2026-10-07",
+  "map": "2025-enacted / 120th Congress numbering",
+  "scope": "U.S. House general-election field for all 38 Texas congressional districts, as printed on the November 3, 2026 ballot.",
+  "method": "Every candidate name and party was cross-checked against at least two independent sources: (1) the Texas Tribune's November 2026 sample-ballot dataset, which is built from Texas Secretary of State certification and Associated Press race data; (2) The Green Papers' Texas 2026 General Election page, which tracks the same SOS certification and carries FEC committee IDs; (3) the Wikipedia article '2026 United States House of Representatives elections in Texas'. All three agree on all 76 major-party nominees. Minor-party and independent ballot qualification was additionally confirmed against the Secretary of State's own independent-candidate filing page. Where sources conflicted, the SOS-derived sources were treated as authoritative and the conflict is recorded in sourcing_flags.",
+  "ballot_names": "Names are given in the form used in the SOS/AP ballot data, which is what voters see on the ballot. Fuller legal or alternate name forms appear in the candidate note where they differ.",
+  "incumbent_definition": "incumbent: true means the candidate currently serves in the U.S. House representing the district they are running in. A sitting member running in a renumbered or redrawn district they do not currently represent is marked false, with the situation explained in the note. Candidates who previously served in Congress but do not now are not incumbents.",
+  "write_ins": "Certified write-in candidates are not printed on the ballot and are therefore not listed under candidates; where Texas certified one for a district, it is stated in that district's race_note.",
+  "neutrality": "race_note entries are limited to verifiable structural facts about the race (retirement, vacancy, redistricting change, who is on the ballot). They are not endorsements, predictions, or characterizations of any candidate. Forecaster race ratings are deliberately excluded: they are third-party predictions, not ballot facts.",
+  "rating_note": "Race ratings are third-party forecaster labels (Cook Political Report, Decision Desk HQ, Inside Elections, Sabato's Crystal Ball, Silver Bulletin) describing expected competitiveness. They are predictions, not ballot facts and not results.",
+  "rating_source": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas"
+ },
+ "districts": {
+  "1": {
+   "candidates": [
+    {
+     "name": "Nathaniel Moran",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2022"
+    },
+    {
+     "name": "Yolanda R. Prince",
+     "party": "D",
+     "incumbent": false,
+     "note": "won the May 26, 2026 Democratic primary runoff"
+    }
+   ],
+   "race_note": "East Texas district; boundaries changed little under the 2025 map.",
+   "rating": "Safe R"
+  },
+  "2": {
+   "candidates": [
+    {
+     "name": "Steve Toth",
+     "party": "R",
+     "incumbent": false,
+     "note": "state representative from the 15th district; defeated incumbent Rep. Dan Crenshaw in the March 3, 2026 Republican primary"
+    },
+    {
+     "name": "Shaun Finnie",
+     "party": "D",
+     "incumbent": false,
+     "note": "investment banker"
+    }
+   ],
+   "race_note": "Open seat: Republican incumbent Dan Crenshaw lost renomination in the March 2026 primary and is not on the general-election ballot.",
+   "rating": "Safe R"
+  },
+  "3": {
+   "candidates": [
+    {
+     "name": "Keith Self",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2022"
+    },
+    {
+     "name": "Evan Hunt",
+     "party": "D",
+     "incumbent": false,
+     "note": "retired Air Force lieutenant colonel"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "4": {
+   "candidates": [
+    {
+     "name": "Pat Fallon",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2020"
+    },
+    {
+     "name": "Jason Pearce",
+     "party": "D",
+     "incumbent": false,
+     "note": "construction project manager"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "5": {
+   "candidates": [
+    {
+     "name": "Lance Gooden",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2018"
+    },
+    {
+     "name": "Chelsey Hockett",
+     "party": "D",
+     "incumbent": false,
+     "note": "won the May 26, 2026 Democratic primary runoff"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "6": {
+   "candidates": [
+    {
+     "name": "Jake Ellzey",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected in a July 2021 special election"
+    },
+    {
+     "name": "Danny Minton",
+     "party": "D",
+     "incumbent": false,
+     "note": "sales representative"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "7": {
+   "candidates": [
+    {
+     "name": "Lizzie Fletcher",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected 2018"
+    },
+    {
+     "name": "Alexander Hale",
+     "party": "R",
+     "incumbent": false,
+     "note": "consultant; won the May 26, 2026 Republican primary runoff"
+    },
+    {
+     "name": "Espoir Ngabo",
+     "party": "G",
+     "incumbent": false,
+     "note": "IT analyst; nominated by Green Party convention"
+    }
+   ],
+   "race_note": "One of seven districts with a certified minor-party candidate on the ballot.",
+   "rating": "Safe D"
+  },
+  "8": {
+   "candidates": [
+    {
+     "name": "Jessica Hart Steinmann",
+     "party": "R",
+     "incumbent": false,
+     "note": "attorney"
+    },
+    {
+     "name": "Laura Jones",
+     "party": "D",
+     "incumbent": false,
+     "note": "former chair of the San Jacinto County Democratic Party; this district's Democratic nominee in 2022 and 2024"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Morgan Luttrell announced in September 2025 that he would not seek re-election.",
+   "rating": "Safe R"
+  },
+  "9": {
+   "candidates": [
+    {
+     "name": "Leticia Gutierrez",
+     "party": "D",
+     "incumbent": false,
+     "note": "environmental advocate from Houston's East End"
+    },
+    {
+     "name": "Alex Mealer",
+     "party": "R",
+     "incumbent": false,
+     "note": "Army veteran and former energy investment banker; 2022 nominee for Harris County judge; won the May 26, 2026 Republican primary runoff; also appears as Alexandra del Moral Mealer"
+    }
+   ],
+   "race_note": "Open seat with no incumbent on the ballot. The 2025 map substantially redrew this Houston-area district; its previous incumbent, Democratic Rep. Al Green, ran in the redrawn 18th district instead and lost that primary. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Likely R"
+  },
+  "10": {
+   "candidates": [
+    {
+     "name": "Chris Gober",
+     "party": "R",
+     "incumbent": false,
+     "note": "political-law attorney"
+    },
+    {
+     "name": "Caitlin Rourk",
+     "party": "D",
+     "incumbent": false,
+     "note": "Army veteran and former Dell Technologies employee; appears in SOS records as Caitlin McClay Rourk"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Michael McCaul, first elected in 2004, announced in September 2025 that he would not seek re-election. The redrawn district spans 13 counties from the Houston suburbs through rural East Texas to northern Austin.",
+   "rating": "Likely R"
+  },
+  "11": {
+   "candidates": [
+    {
+     "name": "August Pfluger",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2020"
+    },
+    {
+     "name": "Claire Reynolds",
+     "party": "D",
+     "incumbent": false,
+     "note": "attorney"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "12": {
+   "candidates": [
+    {
+     "name": "Craig Goldman",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2024"
+    },
+    {
+     "name": "Heli Rodriguez Prilliman",
+     "party": "D",
+     "incumbent": false,
+     "note": "entrepreneur; full name Angela \"Heli\" Rodriguez Prilliman, and some sources list her as Angela Rodriguez Prilliman"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "13": {
+   "candidates": [
+    {
+     "name": "Ronny Jackson",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2020"
+    },
+    {
+     "name": "Mark Nair",
+     "party": "D",
+     "incumbent": false,
+     "note": "former Amarillo city councilor"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "14": {
+   "candidates": [
+    {
+     "name": "Randy Weber",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2012"
+    },
+    {
+     "name": "Thurman Bill Bartie",
+     "party": "D",
+     "incumbent": false,
+     "note": "former mayor of Port Arthur; won the May 26, 2026 Democratic primary runoff"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "15": {
+   "candidates": [
+    {
+     "name": "Monica De La Cruz",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2022; appears in SOS records as Monica De La Cruz-Hernandez"
+    },
+    {
+     "name": "Bobby Pulido",
+     "party": "D",
+     "incumbent": false,
+     "note": "Tejano musician"
+    }
+   ],
+   "race_note": "The redrawn district adds southeastern Hidalgo County and part of the Coastal Bend. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Tilt R"
+  },
+  "16": {
+   "candidates": [
+    {
+     "name": "Veronica Escobar",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected 2018"
+    },
+    {
+     "name": "Adam Bauman",
+     "party": "R",
+     "incumbent": false,
+     "note": "business owner; won the May 26, 2026 Republican primary runoff"
+    }
+   ],
+   "rating": "Safe D"
+  },
+  "17": {
+   "candidates": [
+    {
+     "name": "Pete Sessions",
+     "party": "R",
+     "incumbent": true,
+     "note": "has represented this district since January 2021; previously served in the U.S. House 1997-2019 from a Dallas-based district"
+    },
+    {
+     "name": "Casey Shepard",
+     "party": "D",
+     "incumbent": false,
+     "note": "attorney; won the May 26, 2026 Democratic primary runoff"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "18": {
+   "candidates": [
+    {
+     "name": "Christian D. Menefee",
+     "party": "D",
+     "incumbent": true,
+     "note": "won the January 31, 2026 special election for this seat and was sworn in February 2026; won the May 26, 2026 Democratic primary runoff against Rep. Al Green"
+    },
+    {
+     "name": "Ronald Dwayne Whitfield",
+     "party": "R",
+     "incumbent": false,
+     "note": "landscaping contractor; candidate in the 2025 special election for this seat"
+    }
+   ],
+   "race_note": "The seat was vacant from March to November 2025 after Rep. Sylvester Turner died in office; Menefee won the January 31, 2026 special-election runoff to serve the remainder of the term. Democratic Rep. Al Green, whose previous 9th district was redrawn, ran here and lost the May 2026 primary runoff.",
+   "rating": "Safe D"
+  },
+  "19": {
+   "candidates": [
+    {
+     "name": "Tom Sell",
+     "party": "R",
+     "incumbent": false,
+     "note": "businessman; won the May 26, 2026 Republican primary runoff"
+    },
+    {
+     "name": "Kyle Rable",
+     "party": "D",
+     "incumbent": false,
+     "note": "secretary of the Lubbock County Democratic Party"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Jodey Arrington announced in November 2025 that he would not seek re-election.",
+   "rating": "Safe R"
+  },
+  "20": {
+   "candidates": [
+    {
+     "name": "Joaquin Castro",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected 2012"
+    },
+    {
+     "name": "Edgardo Rafael Baez",
+     "party": "R",
+     "incumbent": false,
+     "note": "attorney; appears on the ballot as Edgardo Rafael B\u00e1ez"
+    }
+   ],
+   "race_note": "The redrawn district takes in substantially more of downtown San Antonio.",
+   "rating": "Safe D"
+  },
+  "21": {
+   "candidates": [
+    {
+     "name": "Mark Teixeira",
+     "party": "R",
+     "incumbent": false,
+     "note": "former Major League Baseball player; appears in SOS records as Mark Charles \"Tex\" Teixeira"
+    },
+    {
+     "name": "Kristin Hook",
+     "party": "D",
+     "incumbent": false,
+     "note": "scientist; this district's Democratic nominee in 2024"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Chip Roy ran for Texas attorney general rather than re-election and did not win that nomination.",
+   "rating": "Safe R"
+  },
+  "22": {
+   "candidates": [
+    {
+     "name": "Trever Nehls",
+     "party": "R",
+     "incumbent": false,
+     "note": "former Fort Bend County constable; twin brother of retiring Rep. Troy Nehls"
+    },
+    {
+     "name": "Marquette Greene-Scott",
+     "party": "D",
+     "incumbent": false,
+     "note": "Iowa Colony city councilor; this district's Democratic nominee in 2024"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Troy Nehls announced in November 2025 that he would not seek re-election. The Republican nominee is his twin brother; neither is the incumbent on this ballot.",
+   "rating": "Safe R"
+  },
+  "23": {
+   "candidates": [
+    {
+     "name": "Brandon Herrera",
+     "party": "R",
+     "incumbent": false,
+     "note": "firearms manufacturer and YouTuber; this district's Republican primary challenger in 2024. Became the nominee when the May runoff was cancelled after Rep. Tony Gonzales ended his campaign on March 5, 2026"
+    },
+    {
+     "name": "Katy Padilla Stout",
+     "party": "D",
+     "incumbent": false,
+     "note": "San Antonio attorney and former teacher"
+    },
+    {
+     "name": "Ben Mendoza",
+     "party": "I",
+     "incumbent": false,
+     "note": "retired mediator from El Paso; the only independent U.S. House candidate in Texas who qualified for the 2026 general-election ballot. Appears in SOS records as Benjamin E. Mendoza"
+    }
+   ],
+   "race_note": "The seat is vacant. Republican Rep. Tony Gonzales ended his re-election campaign on March 5, 2026 and resigned effective April 14, 2026. Governor Greg Abbott did not call a special election to fill the remainder of the term, so unlike the 18th district in 2025-26 there is no separate special-election contest on this ballot: the November 3 general election is the only U.S. House race here, and the winner is not seated until the new Congress convenes in January 2027, leaving the district unrepresented in the interim. Three candidates appear on the ballot, including the state's only qualified independent U.S. House candidate. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Likely R"
+  },
+  "24": {
+   "candidates": [
+    {
+     "name": "Beth Van Duyne",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2020"
+    },
+    {
+     "name": "Kevin Burge",
+     "party": "D",
+     "incumbent": false,
+     "note": "IT security specialist; won the May 26, 2026 Democratic primary runoff"
+    }
+   ],
+   "rating": "Likely R"
+  },
+  "25": {
+   "candidates": [
+    {
+     "name": "Roger Williams",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2012"
+    },
+    {
+     "name": "Dione Sims",
+     "party": "D",
+     "incumbent": false,
+     "note": "nonprofit founder"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "26": {
+   "candidates": [
+    {
+     "name": "Brandon Gill",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2024"
+    },
+    {
+     "name": "Steven Shook",
+     "party": "D",
+     "incumbent": false,
+     "note": "nurse practitioner"
+    },
+    {
+     "name": "Phil Gray",
+     "party": "L",
+     "incumbent": false,
+     "note": "nominated by Libertarian Party convention"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "27": {
+   "candidates": [
+    {
+     "name": "Michael Cloud",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected in a June 2018 special election"
+    },
+    {
+     "name": "Tanya Lloyd",
+     "party": "D",
+     "incumbent": false,
+     "note": "teacher; this district's Democratic nominee in 2024"
+    }
+   ],
+   "race_note": "Two candidates are printed on the ballot. Texas also certified one declared write-in candidate here, Wayne Raasch, who lost the March 2026 Democratic primary; write-in candidates are not printed on the ballot and must be written in by the voter.",
+   "rating": "Likely R"
+  },
+  "28": {
+   "candidates": [
+    {
+     "name": "Henry Cuellar",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected 2004"
+    },
+    {
+     "name": "Tano Tijerina",
+     "party": "R",
+     "incumbent": false,
+     "note": "Webb County judge since 2014"
+    },
+    {
+     "name": "Marlon Duran",
+     "party": "G",
+     "incumbent": false,
+     "note": "nominated by Green Party convention; appears on the ballot as Marl\u00f3n Dur\u00e1n"
+    }
+   ],
+   "race_note": "A Democratic-held South Texas seat made more Republican-leaning by the 2025 map. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Likely D"
+  },
+  "29": {
+   "candidates": [
+    {
+     "name": "Sylvia Garcia",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected 2018"
+    },
+    {
+     "name": "Martha Fierro",
+     "party": "R",
+     "incumbent": false,
+     "note": "appears in SOS records as Martha Elena Fierro"
+    }
+   ],
+   "rating": "Safe D"
+  },
+  "30": {
+   "candidates": [
+    {
+     "name": "Frederick D. Haynes III",
+     "party": "D",
+     "incumbent": false,
+     "note": "pastor and former president and CEO of Rainbow/PUSH; won the March 3, 2026 Democratic primary outright"
+    },
+    {
+     "name": "Everett Jackson",
+     "party": "R",
+     "incumbent": false,
+     "note": "business owner; won the May 26, 2026 Republican primary runoff"
+    }
+   ],
+   "race_note": "Open seat: Democratic Rep. Jasmine Crockett ran for the U.S. Senate rather than re-election and did not win that nomination.",
+   "rating": "Safe D"
+  },
+  "31": {
+   "candidates": [
+    {
+     "name": "John Carter",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2002"
+    },
+    {
+     "name": "Justin Early",
+     "party": "D",
+     "incumbent": false,
+     "note": "cybersecurity architect"
+    },
+    {
+     "name": "Greg Stoker",
+     "party": "G",
+     "incumbent": false,
+     "note": "podcaster and former Army Ranger; nominated by Green Party convention"
+    }
+   ],
+   "rating": "Likely R"
+  },
+  "32": {
+   "candidates": [
+    {
+     "name": "Dan Barrios",
+     "party": "D",
+     "incumbent": false,
+     "note": "former Richardson city councilor"
+    },
+    {
+     "name": "Jace Yarbrough",
+     "party": "R",
+     "incumbent": false,
+     "note": "attorney; became the nominee in March 2026 when runoff opponent Ryan Binkley withdrew"
+    }
+   ],
+   "race_note": "Open seat with no incumbent on the ballot. The 2025 map reconfigured this district from a Dallas-area seat into a largely rural and exurban North and East Texas seat. Its previous incumbent, Democratic Rep. Julie Johnson, ran in the redrawn 33rd district instead and lost that primary.",
+   "rating": "Likely R"
+  },
+  "33": {
+   "candidates": [
+    {
+     "name": "Colin Allred",
+     "party": "D",
+     "incumbent": false,
+     "note": "former U.S. representative for the 32nd district (2019-2025) and 2024 Democratic nominee for U.S. Senate; won the May 26, 2026 Democratic primary runoff against Rep. Julie Johnson"
+    },
+    {
+     "name": "Patrick David Gillespie",
+     "party": "R",
+     "incumbent": false,
+     "note": "customs broker; won the May 26, 2026 Republican primary runoff"
+    }
+   ],
+   "race_note": "Open seat: Democratic Rep. Marc Veasey did not seek re-election after the 2025 map moved this district's base from Tarrant County to Dallas County, and ran for Tarrant County judge instead. Displaced 32nd-district Rep. Julie Johnson ran here and lost the May 2026 primary runoff. Allred previously served in Congress but is not the incumbent. Texas also certified one declared write-in candidate here, Michelle Craig, who is not printed on the ballot.",
+   "rating": "Safe D"
+  },
+  "34": {
+   "candidates": [
+    {
+     "name": "Vicente Gonzalez",
+     "party": "D",
+     "incumbent": true,
+     "note": "first elected to the U.S. House in 2016; has represented the 34th district since 2023"
+    },
+    {
+     "name": "Eric Flores",
+     "party": "R",
+     "incumbent": false,
+     "note": "former federal prosecutor"
+    },
+    {
+     "name": "Eddie Espinoza",
+     "party": "G",
+     "incumbent": false,
+     "note": "teacher and 2024 nominee for railroad commissioner; nominated by Green Party convention"
+    },
+    {
+     "name": "Chris Royal",
+     "party": "L",
+     "incumbent": false,
+     "note": "independent candidate for this seat in 2020 and 2022; nominated by Libertarian Party convention"
+    }
+   ],
+   "race_note": "The largest field of any Texas U.S. House district this year, with four candidates on the ballot. A Democratic-held South Texas seat made more Republican-leaning by the 2025 map, which removed Hidalgo County territory around McAllen and added Nueces and coastal-area territory. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Lean D"
+  },
+  "35": {
+   "candidates": [
+    {
+     "name": "Johnny Garcia",
+     "party": "D",
+     "incumbent": false,
+     "note": "Bexar County sheriff's deputy; won the May 26, 2026 Democratic primary runoff"
+    },
+    {
+     "name": "Carlos De La Cruz",
+     "party": "R",
+     "incumbent": false,
+     "note": "gym owner and brother of Rep. Monica De La Cruz; won the May 26, 2026 Republican primary runoff"
+    }
+   ],
+   "race_note": "Open seat with no incumbent on the ballot. The 2025 map stripped this district of its Austin and Travis County core and rebuilt it around parts of Bexar, Guadalupe, Karnes and Wilson counties; its previous incumbent, Democratic Rep. Greg Casar, ran in the redrawn 37th district instead. Reported by the Texas Tribune in October 2026 as one of the state's competitive U.S. House races.",
+   "rating": "Lean R"
+  },
+  "36": {
+   "candidates": [
+    {
+     "name": "Brian Babin",
+     "party": "R",
+     "incumbent": true,
+     "note": "first elected 2014"
+    },
+    {
+     "name": "Rhonda Hart",
+     "party": "D",
+     "incumbent": false,
+     "note": "the 14th district's Democratic nominee in 2024"
+    }
+   ],
+   "rating": "Safe R"
+  },
+  "37": {
+   "candidates": [
+    {
+     "name": "Greg Casar",
+     "party": "D",
+     "incumbent": false,
+     "note": "sitting U.S. representative, first elected 2022, who currently represents the 35th district; he is running here after the 2025 map moved his Austin base into this district. He is not the incumbent of the 37th district"
+    },
+    {
+     "name": "Lauren B. Pena",
+     "party": "R",
+     "incumbent": false,
+     "note": "paralegal; won the May 26, 2026 Republican primary runoff; appears on the ballot as Lauren B. Pe\u00f1a"
+    }
+   ],
+   "race_note": "Open seat: Democratic Rep. Lloyd Doggett, first elected in 1994, announced he would not seek re-election after the Supreme Court allowed the 2025 map to take effect, rather than run against fellow Democrat Greg Casar. The redrawn district is centered on Travis County and Austin. Some sources label Casar the incumbent because he is a sitting member of Congress; the 37th district's incumbent is Doggett, who is retiring.",
+   "rating": "Safe D"
+  },
+  "38": {
+   "candidates": [
+    {
+     "name": "Jon Bonck",
+     "party": "R",
+     "incumbent": false,
+     "note": "mortgage broker; won the May 26, 2026 Republican primary runoff"
+    },
+    {
+     "name": "Melissa McDonough",
+     "party": "D",
+     "incumbent": false,
+     "note": "realtor; this district's Democratic nominee in 2024"
+    },
+    {
+     "name": "Alex McMenemy",
+     "party": "G",
+     "incumbent": false,
+     "note": "nominated by Green Party convention"
+    }
+   ],
+   "race_note": "Open seat: Republican Rep. Wesley Hunt ran for the U.S. Senate rather than re-election and did not win that nomination.",
+   "rating": "Likely R"
+  }
+ },
+ "sources": [
+  "https://apps.texastribune.org/features/2026/texas-general-election-ballot-november-2026/",
+  "https://s3.us-east-1.amazonaws.com/sos-test-2.texastribune.org/2026_general/ballot_page/results_FLAT_for_ballot.json",
+  "https://www.thegreenpapers.com/G26/TX",
+  "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas",
+  "https://www.sos.state.tx.us/elections/laws/independent-declarations-2026.shtml",
+  "https://www.sos.texas.gov/elections/forms/2026-independent-declaration-tracking.pdf",
+  "https://www.sos.texas.gov/elections/laws/advisory2026-22.shtml",
+  "https://www.sos.state.tx.us/elections/candidates/guide/2026/writein2026.shtml",
+  "https://www.texastribune.org/2026/09/30/texas-congress-house-elections-2026-midterms/",
+  "https://www.texastribune.org/2026/10/06/texas-2026-elections-competitive-races-us-congress-state-legislature/",
+  "https://www.texastribune.org/2026/08/25/texas-general-election-november-2026-voter-guide/",
+  "https://www.texastribune.org/2026/06/09/screwworm-texas-vacant-congressional-district-gonzales-herrera-padilla-stout/",
+  "https://en.wikipedia.org/wiki/2025_Texas_redistricting",
+  "https://rollcall.com/2025/12/10/texas-candidates-midterm-elections-redistricting/",
+  "https://www.tpr.org/government-politics/2026-04-15/when-will-gov-abbott-call-a-special-election-for-texas-23rd-congressional-district",
+  "https://www.houstonchronicle.com/politics/texas-take/article/abbott-texans-congress-tony-gonzales-22403054.php",
+  "https://news.ballotpedia.org/2026/04/22/tony-gonzales-resignation-leaves-texas-23rd-congressional-district-vacant/",
+  "https://www.keranews.org/elections-2026/2026-03-04/congress-frederick-haynes-jasmine-crockett-texas-dallas",
+  "https://www.cbsnews.com/texas/news/results-texas-democratic-primary-district-30-frederick-haynes/",
+  "https://www.fox4news.com/news/texas-primary-results-us-house-district-30",
+  "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Texas,_2026"
+ ],
+ "sourcing_flags": [
+  "23 - Field itself is firmly confirmed by three sources (Herrera R, Padilla Stout D, Mendoza I). Flagged because the ballot structure is unusual and was widely misreported: although Rep. Tony Gonzales resigned effective April 14, 2026, Governor Abbott never called a special election for the remainder of the term, so there is NO special election alongside the regular race. Earlier reporting and the companion reps.json anticipated one. Confirmed by Wikipedia, Texas Public Radio, Houston Chronicle and the absence of any CD 23 special election in The Green Papers' Texas 2026 calendar (which does list the CD 18 special).",
+  "1 - Field (Moran R, Prince D) confirmed by three sources. Flagged because Wikipedia's general-election results table for this district also lists an independent, 'Sonia Canciola' (spelled 'Sonia Canchola' elsewhere in the same article, itself an unresolved inconsistency). No independent qualified for the ballot in District 1: the SOS independent-filing page lists Ben Mendoza (District 23) as the only certified independent U.S. House candidate statewide, and the only District 1 declaration of intent on the SOS tracking list was filed by Nathan Levin Jackson. Canchola/Canciola is EXCLUDED from the field above.",
+  "27 - Field (Cloud R, Lloyd D) confirmed by three sources. Flagged because Wikipedia's general-election results table also lists 'Dan McQueen (Independent)', former mayor of Corpus Christi. No independent qualified in District 27. The SOS declaration-of-intent list shows two different McQueens who filed and did not qualify: Eldon Daniel McQueen (District 21, Comal County, engineer) and Travis Daniel McQueen (District 27, Nueces County, contractor); Wikipedia separately lists 'Eldon Dan McQueen, former mayor of Corpus Christi' under District 21, conflating at least two people. McQueen is EXCLUDED from the field above. Separately, Wayne Raasch is a certified write-in here and so is not printed on the ballot.",
+  "30 - Field (Haynes III D, Jackson R) confirmed by five sources (Tribune/AP SOS data, The Green Papers, Wikipedia, KERA, CBS Texas, Fox 4). Flagged only because it CONFLICTS WITH THE COMPANION FILE: reps.json lists 'Venton Jones' as the District 30 Democratic nominee. That appears to be an error in reps.json; Venton Jones does not appear in any source as a candidate in this primary. reps.json was not modified.",
+  "33 - Field (Allred D, Gillespie R) confirmed by three sources. Flagged for two labeling hazards: (a) Colin Allred is a FORMER member of Congress, not the incumbent, and the prior version of this file incorrectly marked him incumbent; (b) Michelle Craig is a certified write-in and is not printed on the ballot.",
+  "37 - Field (Casar D, Pena R) confirmed by three sources. Flagged because incumbency is genuinely ambiguous and sources disagree: Wikipedia labels Greg Casar '(incumbent)' because he is a sitting member of Congress, while the SOS/AP ballot data and The Green Papers treat the 37th as an open seat whose incumbent is the retiring Lloyd Doggett, with Casar noted as the incumbent of the old 35th. This file records incumbent: false with an explanatory note. Choose a display convention deliberately.",
+  "12 - Field confirmed by three sources, but the Democratic nominee's name form varies: 'Heli Rodriguez Prilliman' (SOS/AP ballot data, used here), 'Angela \"Heli\" Rodriguez Prilliman' (The Green Papers), 'Angela Rodriguez Prilliman' (Wikipedia). Same person; no conflict about the candidacy.",
+  "7 - Field confirmed by three sources, but the Green candidate's name order varies: 'Espoir Ngabo' (SOS/AP ballot data and The Green Papers, used here) versus 'Ngabo Espoir' (Wikipedia's results table, which contradicts the candidate bullet in the same article). Given name is Espoir.",
+  "2, 22, 32 - Fields are firmly confirmed; flagged only because the prior single-source version of this file incorrectly marked Steve Toth (2), Trever Nehls (22) and Jace Yarbrough (32) as incumbents. None is an incumbent: Toth is a state representative who defeated incumbent Dan Crenshaw in the primary, Trever Nehls is the retiring incumbent's twin brother, and Yarbrough is running for an open seat whose former incumbent was a Democrat drawn into another district.",
+  "NOT FLAGGED, for the record - minor-party ballot qualification was verified rather than assumed. Seven minor-party candidates qualified: Green in districts 7, 28, 31, 34 and 38; Libertarian in districts 26 and 34. Wikipedia additionally lists convention candidates who do not appear in the SOS-derived certified field (for example John E. Foddrill, Libertarian, district 28) and many 'filed paperwork' independents in districts 5, 9, 18, 20, 21, 23, 30, 31, 32, 33, 35, 36, 37 and 38 who did not qualify; a federal FEC filing or a declaration of intent is not Texas ballot access. None of these are included above.",
+  "Cross-check that passed - the number of incumbents on the ballot reconciles with The Green Papers' independent tally of the 119th Congress delegation: 17 Republicans and 8 Democrats renominated. Of those 25, 24 are running in the district they currently represent (marked incumbent: true here) and one, Greg Casar, is running in a different district number (district 37).",
+  "A note on the 'five targeted seats' framing - sources differ on which five Democratic-held seats the 2025 map targeted, so no district's race_note asserts membership in a 'five seats' list. Wikipedia and Roll Call frame it by displaced incumbent: the districts of Marc Veasey (old 33rd), Julie Johnson (old 32nd), Al Green (old 9th), Vicente Gonzalez (34th) and Lloyd Doggett (old 37th). The Texas Tribune's October 2026 competitiveness reporting instead names new-map districts 28, 34 and 35 as targeted Democratic seats. The companion reps.json uses a third list (9, 28, 33, 34, 35). These are different framings of the same redraw rather than factual contradictions, but the counts are not interchangeable.",
+  "30: one secondary source also lists an independent, Oxford Nordberg, on this ballot; the SOS certified-independent list used here does not. Shown without him pending confirmation."
+ ]
+}
