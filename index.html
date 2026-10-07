@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Texas Congressional Districts &mdash; 2026 Voting Guide</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1623'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%235a9bf5'/%3E%3C/svg%3E">
+<title>2026 Texas Voting Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1020'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%2300d4ff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Jost:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   :root{
-    --bg:#080c14; --surface:#0f1623; --surface2:#16203140; --border:#1e2a3a;
-    --text:#e8eef8; --muted:#7a8fa8; --accent:#3a7bd5; --accent-hi:#5a9bf5;
-    --rep:#d64550; --dem:#3a7bd5; --vacant:#6b7688;
+    --bg:#04060f; --surface:#0a1020; --surface2:#111a33; --border:#1d2d55;
+    --text:#e6f3ff; --muted:#7e95c2; --accent:#00d4ff; --accent-hi:#6ceaff;
+    --rep:#ff2e63; --dem:#2e7bff; --vacant:#5a6a8a;
+    --lib:#ffc83d; --grn:#2fe08a; --ind:#b06bff;
+    --glow-r:0 0 14px rgba(255,46,99,.55); --glow-b:0 0 14px rgba(46,123,255,.55);
     --panel-w:350px; --header-h:52px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -27,17 +29,27 @@
   header{
     position:fixed; top:0; left:0; right:0; z-index:1100; height:var(--header-h);
     display:flex; align-items:center; gap:.9rem;
-    padding:0 1.1rem; background:rgba(8,12,20,.94); backdrop-filter:blur(10px);
+    padding:0 1.1rem; background:rgba(4,6,15,.93); backdrop-filter:blur(10px);
     border-bottom:1px solid var(--border);
+    /* Chrome on iOS draws into the notch/rounded corners with viewport-fit=cover. */
+    padding-left:max(1.1rem, env(safe-area-inset-left));
+    padding-right:max(1.1rem, env(safe-area-inset-right));
   }
   header a.home{
     color:var(--muted); text-decoration:none; font-size:.85rem; font-weight:700;
-    border:1px solid var(--border); border-radius:6px; padding:.3rem .6rem; white-space:nowrap;
+    border:1px solid var(--border); border-radius:6px; padding:.3rem .6rem;
+    white-space:nowrap; flex:none;
   }
   header a.home:hover{color:var(--text); border-color:var(--accent)}
   header h1{
-    font-family:'Jost',sans-serif; font-size:1.05rem; font-weight:700; white-space:nowrap;
+    font-family:'Jost',sans-serif; font-size:1.05rem; font-weight:700;
+    letter-spacing:.02em; text-shadow:0 0 18px rgba(0,212,255,.45);
+    /* The toggle is the one control that must never be clipped. Let the title
+       be the thing that gives way: min-width:0 is what actually allows a flex
+       item to shrink below its content width. */
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;
   }
+  header a.home abbr{text-decoration:none; border:none}
   .maptoggle{
     display:flex; margin-left:auto; border:1px solid var(--border); border-radius:8px;
     overflow:hidden; flex:none;
@@ -45,18 +57,25 @@
   .maptoggle button{
     background:var(--surface); color:var(--muted); border:none; padding:.5rem .8rem;
     cursor:pointer; font-family:inherit; font-weight:700; font-size:.78rem;
+    letter-spacing:.04em; text-transform:uppercase; transition:color .15s, box-shadow .15s;
   }
-  .maptoggle button.active{background:var(--accent); color:#fff}
-  .maptoggle button:not(.active):hover{color:var(--text)}
+  .maptoggle button.active{
+    background:var(--accent); color:#02131c;
+    box-shadow:0 0 18px rgba(0,212,255,.6), inset 0 0 12px rgba(255,255,255,.25);
+  }
+  .maptoggle button:not(.active):hover{color:var(--accent-hi)}
 
   /* ── Map ── */
   #map{position:absolute; top:var(--header-h); left:0; right:var(--panel-w); bottom:0; background:var(--bg)}
   .leaflet-container{background:var(--bg); font-family:'DM Sans',sans-serif}
+  /* Esri's canvas is a warm mid-grey. Tint each tile (never the pane — a pane
+     filter creates a stacking context and the overlay panes go with it) hard
+     toward cyan so the basemap reads as backlit grid rather than paper. */
   .leaflet-tile-pane .leaflet-tile{
-    filter:brightness(.5) contrast(1.3) saturate(.5) sepia(.25) hue-rotate(175deg);
+    filter:brightness(.42) contrast(1.55) saturate(.35) sepia(.5) hue-rotate(168deg);
   }
   .leaflet-control-attribution{
-    background:rgba(8,12,20,.85)!important; color:var(--muted)!important; font-size:.65rem!important;
+    background:rgba(4,6,15,.88)!important; color:var(--muted)!important; font-size:.65rem!important;
   }
   .leaflet-control-attribution a{color:var(--muted)!important}
   .leaflet-control-zoom a{
@@ -78,11 +97,53 @@
     color:var(--muted); margin-bottom:.7rem;
   }
 
+  /* find-your-district */
+  .locate-btn{
+    display:block; width:100%; padding:.65rem .8rem; border-radius:8px; cursor:pointer;
+    background:var(--accent); color:#02131c; border:none; font-family:inherit;
+    font-weight:700; font-size:.88rem; letter-spacing:.02em;
+    box-shadow:0 0 20px rgba(0,212,255,.4);
+  }
+  .locate-btn:hover{background:var(--accent-hi)}
+  .locate-btn:disabled{opacity:.6; cursor:default; box-shadow:none}
+  .find-or{
+    color:var(--muted); font-size:.72rem; text-align:center; margin:.55rem 0 .45rem;
+    text-transform:uppercase; letter-spacing:.1em;
+  }
+  .find-row{display:flex; gap:.4rem}
+  .find-row input{
+    flex:1; min-width:0; background:#02040c; border:1px solid var(--border);
+    color:var(--text); border-radius:7px; padding:.5rem .6rem;
+    font-family:inherit; font-size:.82rem;
+  }
+  .find-row input:focus{
+    outline:none; border-color:var(--accent); box-shadow:0 0 0 2px rgba(0,212,255,.18);
+  }
+  .find-row button{
+    flex:none; background:var(--surface2); color:var(--text); border:1px solid var(--border);
+    border-radius:7px; padding:.5rem .75rem; cursor:pointer;
+    font-family:inherit; font-weight:700; font-size:.82rem;
+  }
+  .find-row button:hover{border-color:var(--accent); color:var(--accent-hi)}
+  .find-msg{
+    margin-top:.6rem; padding:.55rem .65rem; border-radius:7px;
+    font-size:.78rem; line-height:1.5;
+    background:rgba(0,212,255,.08); border:1px solid rgba(0,212,255,.3);
+  }
+  .find-msg.err{background:rgba(255,46,99,.1); border-color:rgba(255,46,99,.38); color:#ff9ab4}
+  .find-msg.warn{background:rgba(255,200,61,.1); border-color:rgba(255,200,61,.42); color:#ffd978}
+  .find-msg b{color:var(--accent-hi)}
+  .find-msg.warn b{color:#ffd978}
+  .find-msg a{color:inherit}
+
   /* district readout */
   #d-empty{color:var(--muted); font-size:.85rem; line-height:1.6}
   #d-body{display:none}
   #d-body.on{display:block}
-  .d-num{font-family:'Jost',sans-serif; font-size:1.65rem; font-weight:700; line-height:1.1}
+  .d-num{
+    font-family:'Jost',sans-serif; font-size:1.75rem; font-weight:700; line-height:1.1;
+    text-shadow:0 0 16px rgba(0,212,255,.35);
+  }
   .d-party{
     display:inline-flex; align-items:center; gap:.45rem; font-weight:700;
     font-size:.9rem; margin:.5rem 0 .2rem;
@@ -96,8 +157,8 @@
   }
   .d-flag{
     margin-top:.7rem; padding:.55rem .65rem; border-radius:7px;
-    background:rgba(214,69,80,.09); border:1px solid rgba(214,69,80,.3);
-    color:#e6a3a8; font-size:.74rem; line-height:1.5;
+    background:rgba(255,46,99,.1); border:1px solid rgba(255,46,99,.38);
+    color:#ff9ab4; font-size:.74rem; line-height:1.5;
   }
   .d-open{
     display:block; margin-top:.9rem; text-align:center; text-decoration:none;
@@ -117,11 +178,12 @@
   .date-row.past .when,.date-row.past .what{opacity:.45; text-decoration:line-through}
   .date-row.soon .when{color:var(--accent-hi)}
   .countdown{
-    margin-top:.7rem; padding:.6rem .7rem; border-radius:8px;
-    background:rgba(58,123,213,.1); border:1px solid rgba(58,123,213,.3);
-    font-size:.82rem; text-align:center;
+    margin-top:.7rem; padding:.65rem .7rem; border-radius:8px;
+    background:linear-gradient(180deg,rgba(0,212,255,.14),rgba(0,212,255,.05));
+    border:1px solid rgba(0,212,255,.4); font-size:.82rem; text-align:center;
+    box-shadow:0 0 22px rgba(0,212,255,.12) inset;
   }
-  .countdown b{font-size:1.05rem}
+  .countdown b{font-size:1.15rem; color:var(--accent-hi); text-shadow:0 0 14px rgba(0,212,255,.6)}
 
   /* legend + tally */
   .legend-row{display:flex; align-items:center; gap:.5rem; margin-bottom:.35rem; font-size:.8rem}
@@ -133,8 +195,11 @@
     flex:1; text-align:center; padding:.5rem .3rem; border-radius:8px;
     border:1px solid var(--border); font-size:.75rem; color:var(--muted);
   }
-  .tally b{display:block; font-size:1.2rem; font-family:'Jost',sans-serif; color:var(--text)}
-  .tally .r b{color:var(--rep)} .tally .d b{color:var(--dem)}
+  .tally b{display:block; font-size:1.35rem; font-family:'Jost',sans-serif; color:var(--text)}
+  .tally .r b{color:var(--rep); text-shadow:var(--glow-r)}
+  .tally .d b{color:var(--dem); text-shadow:var(--glow-b)}
+  .tally .r{border-color:rgba(255,46,99,.35); background:rgba(255,46,99,.06)}
+  .tally .d{border-color:rgba(46,123,255,.35); background:rgba(46,123,255,.06)}
   .fineprint{color:var(--muted); font-size:.71rem; line-height:1.5}
   .fineprint a{color:var(--accent-hi)}
 
@@ -149,13 +214,25 @@
     header h1{font-size:.92rem}
     header a.home{font-size:.75rem}
   }
+  /* On a phone the title is the first thing to sacrifice: the map toggle and
+     the way back have to stay reachable. */
+  @media (max-width:560px){
+    header{gap:.55rem; padding-left:.65rem; padding-right:.65rem}
+    header h1{font-size:.84rem; letter-spacing:0}
+    header a.home{padding:.3rem .45rem; font-size:0}
+    header a.home:before{content:"\2190"; font-size:.95rem}
+    .maptoggle button{padding:.45rem .55rem; font-size:.68rem; letter-spacing:.02em}
+  }
+  @media (max-width:380px){
+    header h1{display:none}
+  }
 </style>
 </head>
 <body>
 
 <header>
   <a class="home" href="https://jessestrait.com">&larr; jessestrait.com</a>
-  <h1>Texas Districts &mdash; 2026</h1>
+  <h1>2026 Texas Voting Guide</h1>
   <div class="maptoggle" role="group" aria-label="Which map to show">
     <button id="btn-2025" class="active">2026 map</button>
     <button id="btn-2021">2021 map</button>
@@ -165,6 +242,18 @@
 <div id="map"></div>
 
 <aside id="panel">
+
+  <div class="sec" id="sec-find">
+    <div class="sec-title">Find your district</div>
+    <button id="btn-locate" class="locate-btn">Use my location</button>
+    <div class="find-or">or type an address or ZIP</div>
+    <form id="find-form" class="find-row" autocomplete="off">
+      <input id="find-input" type="text" inputmode="search"
+             placeholder="1606 E Parmer Ln, or 78753" aria-label="Address or ZIP code">
+      <button type="submit" id="find-go">Go</button>
+    </form>
+    <div id="find-msg" class="find-msg" hidden></div>
+  </div>
 
   <div class="sec">
     <div class="sec-title">District</div>
@@ -204,6 +293,7 @@
       compiled from Ballotpedia, the Texas Tribune and news reporting &mdash; see
       <code>data/reps.json</code>. Dates from the
       <a href="https://www.votetexas.gov/" target="_blank" rel="noopener">Texas Secretary of State</a>.
+      Address search by <a href="https://openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>/Nominatim.
       Always confirm with your county elections office before you vote.
     </div>
   </div>

@@ -48,7 +48,7 @@ function flagFor(reps) {
 
 function renderHeader(reps) {
   const info = ((reps || {})[repKey] || {})[num];
-  document.title = `Texas District ${num} — 2026 Voting Guide`;
+  document.title = `District ${num} — 2026 Texas Voting Guide`;
   $("page-title").textContent = `Texas District ${num}`;
   $("d-num").textContent = `District ${num}`;
   $("mapname").textContent = mapKey === "2021"

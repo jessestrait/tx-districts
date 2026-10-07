@@ -111,11 +111,13 @@ function flagFor(num) {
 
 function styleFor(num, mapKey) {
   const info = infoFor(num, mapKey);
+  const c = partyColor(info && info.party);
   return {
-    color: "#0b1018",
-    weight: 1,
-    fillColor: partyColor(info && info.party),
-    fillOpacity: 0.55,
+    color: c,          // lines in the district's own colour, not near-black:
+    weight: 1.1,       // at statewide zoom that is what reads as circuitry
+    opacity: 0.85,
+    fillColor: c,
+    fillOpacity: 0.42,
   };
 }
 
@@ -202,7 +204,7 @@ function renderMap(mapKey) {
       onEachFeature: (f, layer) => {
         const num = districtNum(f);
         layer.on("mouseover", () => {
-          layer.setStyle({ weight: 2.5, fillOpacity: 0.78 });
+          layer.setStyle({ weight: 2.6, opacity: 1, fillOpacity: 0.72, color: "#ffffff" });
           layer.bringToFront();
           showDistrict(num, activeMapKey);
         });
@@ -229,6 +231,147 @@ function renderMap(mapKey) {
   });
 }
 
+/* ── "which district am I in?" ──
+ *
+ * The honest caveat, learned the hard way: district lines follow streets, and a
+ * house can sit tens of metres from one. Browser geolocation is itself only
+ * accurate to a few tens of metres on a phone and often far worse on desktop
+ * wifi. So when the located point lands near a boundary, say so and send the
+ * reader to the Secretary of State rather than asserting a district.
+ */
+const NEAR_LINE_M = 200;
+
+function ringHas(pt, ring) {
+  const [x, y] = pt;
+  let inside = false;
+  for (let i = 0, n = ring.length; i < n; i++) {
+    const [x1, y1] = ring[i], [x2, y2] = ring[(i + 1) % n];
+    if ((y1 > y) !== (y2 > y) && x < ((x2 - x1) * (y - y1)) / (y2 - y1) + x1) inside = !inside;
+  }
+  return inside;
+}
+
+function featureHas(pt, geom) {
+  const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
+  return polys.some((poly) =>
+    poly.length && ringHas(pt, poly[0]) && !poly.slice(1).some((h) => ringHas(pt, h)));
+}
+
+function metresToSegment(p, a, b) {
+  const kx = 111320 * Math.cos((p[1] * Math.PI) / 180), ky = 110540;
+  const ax = (a[0] - p[0]) * kx, ay = (a[1] - p[1]) * ky;
+  const bx = (b[0] - p[0]) * kx, by = (b[1] - p[1]) * ky;
+  const dx = bx - ax, dy = by - ay;
+  if (!dx && !dy) return Math.hypot(ax, ay);
+  const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / (dx * dx + dy * dy)));
+  return Math.hypot(ax + t * dx, ay + t * dy);
+}
+
+function locatePoint(lon, lat) {
+  const gj = loadedGeo[activeMapKey];
+  if (!gj) return null;
+  const pt = [lon, lat];
+  let found = null, nearest = Infinity;
+  gj.features.forEach((f) => {
+    if (featureHas(pt, f.geometry)) found = districtNum(f);
+    const polys = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+    polys.forEach((poly) => poly.forEach((ring) => {
+      for (let i = 0; i < ring.length - 1; i++) {
+        const d = metresToSegment(pt, ring[i], ring[i + 1]);
+        if (d < nearest) nearest = d;
+      }
+    }));
+  });
+  return { num: found, nearestMetres: nearest };
+}
+
+let youMarker = null;
+function showFindMsg(html, kind) {
+  const el = $("find-msg");
+  el.hidden = false;
+  el.className = "find-msg" + (kind ? " " + kind : "");
+  el.innerHTML = html;
+}
+
+const SOS = '<a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target="_blank" rel="noopener">Texas My Voter Portal</a>';
+
+function handleLocation(lon, lat, label, accuracyM) {
+  const res = locatePoint(lon, lat);
+  if (!res || !res.num) {
+    showFindMsg(`That spot is outside Texas, so it is not in a Texas congressional district. ${label ? "" : "If you are in Texas, try typing your address or ZIP instead."}`, "err");
+    return;
+  }
+  if (youMarker) map.removeLayer(youMarker);
+  youMarker = L.circleMarker([lat, lon], {
+    radius: 6, color: "#ffffff", weight: 2,
+    fillColor: getVar("--accent"), fillOpacity: 1,
+  }).addTo(map);
+
+  pinnedNum = res.num;
+  showDistrict(res.num, activeMapKey);
+  const target = activeLayer.getLayers().find((l) => districtNum(l.feature) === res.num);
+  if (target) map.fitBounds(target.getBounds(), { padding: [30, 30] });
+
+  const where = label ? `${esc(label)} is in ` : "You are in ";
+  const close = res.nearestMetres < NEAR_LINE_M || (accuracyM && accuracyM > NEAR_LINE_M);
+  if (close) {
+    showFindMsg(`${where}<b>District ${res.num}</b> &mdash; but this spot is about
+      ${Math.round(res.nearestMetres)} m from a district line${accuracyM ? `, and the fix is only accurate to about ${Math.round(accuracyM)} m` : ""}.
+      That is close enough that the district could go either way. Confirm with the ${SOS}.`, "warn");
+  } else {
+    showFindMsg(`${where}<b>District ${res.num}</b>. For your exact polling place and
+      sample ballot, use the ${SOS}.`);
+  }
+}
+
+function wireFind() {
+  const btn = $("btn-locate");
+  if (!navigator.geolocation) {
+    btn.disabled = true;
+    btn.textContent = "Location unavailable on this browser";
+  }
+  btn.addEventListener("click", () => {
+    btn.disabled = true;
+    btn.textContent = "Locating…";
+    const done = () => { btn.disabled = false; btn.textContent = "Use my location"; };
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        done();
+        handleLocation(pos.coords.longitude, pos.coords.latitude, null, pos.coords.accuracy);
+      },
+      (err) => {
+        done();
+        showFindMsg(err.code === 1
+          ? "Location permission was denied, so type an address or ZIP instead."
+          : "Could not get a location fix. Try typing an address or ZIP.", "err");
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 });
+  });
+
+  $("find-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const q = $("find-input").value.trim();
+    if (!q) return;
+    showFindMsg("Searching…");
+    // Nominatim is the only free geocoder here that allows browser requests —
+    // the Census one refuses CORS. Bias it to Texas so a bare ZIP resolves.
+    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=" +
+      encodeURIComponent(/^\d{5}$/.test(q) ? q + ", Texas" : q + ", Texas");
+    fetch(url, { headers: { Accept: "application/json" } })
+      .then((r) => r.json())
+      .then((j) => {
+        if (!j.length) {
+          showFindMsg("No match for that address. Try adding the city, or just your ZIP.", "err");
+          return;
+        }
+        const hit = j[0];
+        handleLocation(parseFloat(hit.lon), parseFloat(hit.lat),
+          (hit.display_name || q).split(",").slice(0, 3).join(","), null);
+      })
+      .catch(() => showFindMsg("Address lookup is unavailable right now. The " + SOS + " can look you up.", "err"));
+  });
+}
+
 function setActiveButton(mapKey) {
   $("btn-2025").classList.toggle("active", mapKey === "2025");
   $("btn-2021").classList.toggle("active", mapKey === "2021");
@@ -247,6 +390,15 @@ $("btn-2021").addEventListener("click", () => {
 });
 
 renderDates();
+wireFind();
+
+/* There is no hover on a touch screen — telling a phone user to hover is just
+   an instruction they cannot follow. */
+if (!CAN_HOVER) {
+  $("d-empty").textContent =
+    "Tap any district on the map to see who holds it and what the 2025 redraw " +
+    "did to it, then open its full guide from the button below.";
+}
 
 fetch("data/reps.json")
   .then((r) => (r.ok ? r.json() : {}))

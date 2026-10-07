@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>District &mdash; Texas 2026 Voting Guide</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f1623'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%235a9bf5'/%3E%3C/svg%3E">
+<title>District &mdash; 2026 Texas Voting Guide</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a1020'/%3E%3Cpath d='M16 5l3.2 9.8h10.3l-8.3 6 3.2 9.8-8.4-6.1-8.4 6.1 3.2-9.8-8.3-6h10.3z' fill='%2300d4ff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Jost:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#080c14; --surface:#0f1623; --surface2:#131c2b; --border:#1e2a3a;
-    --text:#e8eef8; --muted:#7a8fa8; --accent:#3a7bd5; --accent-hi:#5a9bf5;
-    --rep:#d64550; --dem:#3a7bd5; --vacant:#6b7688;
-    --lib:#d6a645; --grn:#4aa96c; --ind:#9b7fd4;
+    --bg:#04060f; --surface:#0a1020; --surface2:#111a33; --border:#1d2d55;
+    --text:#e6f3ff; --muted:#7e95c2; --accent:#00d4ff; --accent-hi:#6ceaff;
+    --rep:#ff2e63; --dem:#2e7bff; --vacant:#5a6a8a;
+    --lib:#ffc83d; --grn:#2fe08a; --ind:#b06bff;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; line-height:1.6}
 
   header{
     display:flex; align-items:center; gap:.9rem; padding:.75rem 1.1rem;
-    background:rgba(8,12,20,.94); border-bottom:1px solid var(--border);
+    background:rgba(4,6,15,.93); border-bottom:1px solid var(--border);
     position:sticky; top:0; z-index:10; backdrop-filter:blur(10px);
   }
   header a.back{
@@ -37,7 +37,8 @@
   /* ── hero ── */
   .hero{display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:1.5rem}
   .hero-text{flex:1; min-width:230px}
-  .hero .num{font-family:'Jost',sans-serif; font-size:2.6rem; font-weight:700; line-height:1.05}
+  .hero .num{font-family:'Jost',sans-serif; font-size:2.6rem; font-weight:700; line-height:1.05;
+    text-shadow:0 0 22px rgba(0,212,255,.35)}
   .hero .party{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; margin-top:.4rem}
   .hero .party .dot{width:.8rem; height:.8rem; border-radius:50%}
   .hero .rep{font-size:1.2rem; font-weight:700; margin-top:.5rem}
@@ -53,7 +54,7 @@
     font-family:'Jost',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.13em;
     text-transform:uppercase; color:var(--muted); margin-bottom:.5rem;
   }
-  .fig svg{display:block; background:#0a0e17; border-radius:8px}
+  .fig svg{display:block; background:#02040c; border-radius:8px; border:1px solid rgba(0,212,255,.12)}
   .fig .cap{color:var(--muted); font-size:.72rem; margin-top:.5rem; line-height:1.45}
   .fig .cap .key{display:inline-flex; align-items:center; gap:.3rem; margin-right:.7rem}
   .fig .cap .dash{
@@ -84,9 +85,9 @@
     letter-spacing:.05em; text-transform:uppercase; padding:.18rem .45rem;
     border-radius:4px; border:1px solid var(--border);
   }
-  .rating.safe-r{background:rgba(214,69,80,.14); color:#e7949a; border-color:rgba(214,69,80,.35)}
-  .rating.safe-d{background:rgba(58,123,213,.14); color:#8fb8ef; border-color:rgba(58,123,213,.35)}
-  .rating.close{background:rgba(214,166,69,.14); color:#e3c07a; border-color:rgba(214,166,69,.4)}
+  .rating.safe-r{background:rgba(255,46,99,.15); color:#ff87a9; border-color:rgba(255,46,99,.45)}
+  .rating.safe-d{background:rgba(46,123,255,.15); color:#8ab6ff; border-color:rgba(46,123,255,.45)}
+  .rating.close{background:rgba(255,200,61,.15); color:#ffd978; border-color:rgba(255,200,61,.5)}
   .race .explain{
     color:var(--muted); font-size:.83rem; margin:.4rem 0 .75rem; line-height:1.55;
     border-left:2px solid var(--border); padding-left:.7rem;
@@ -116,7 +117,7 @@
   details.jargon summary:before{content:"▸ "; }
   details.jargon[open] summary:before{content:"▾ "; }
   details.jargon .official{
-    margin-top:.5rem; padding:.6rem .7rem; background:#0a0e17; border-radius:7px;
+    margin-top:.5rem; padding:.6rem .7rem; background:#02040c; border-radius:7px;
     font-size:.78rem; color:var(--muted); line-height:1.55; font-style:italic;
   }
   .yesno{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.6rem}
@@ -124,8 +125,8 @@
     padding:.55rem .65rem; border-radius:7px; font-size:.8rem; line-height:1.5;
     border:1px solid var(--border);
   }
-  .yesno .y{background:rgba(58,123,213,.08)}
-  .yesno .n{background:rgba(214,69,80,.07)}
+  .yesno .y{background:rgba(46,123,255,.1)}
+  .yesno .n{background:rgba(255,46,99,.09)}
   .yesno b{display:block; margin-bottom:.15rem}
 
   .date-row{
@@ -136,7 +137,8 @@
   .date-row.past{opacity:.45}
 
   .lookup{
-    display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
+    display:inline-block; background:var(--accent); color:#02131c;
+    box-shadow:0 0 20px rgba(0,212,255,.45); text-decoration:none;
     font-weight:700; font-size:.88rem; padding:.65rem 1rem; border-radius:8px; margin-top:.3rem;
   }
   .lookup:hover{background:var(--accent-hi)}
@@ -147,8 +149,8 @@
   }
   .flagnote{
     margin-top:.7rem; padding:.55rem .7rem; border-radius:7px;
-    background:rgba(214,69,80,.09); border:1px solid rgba(214,69,80,.3);
-    color:#e6a3a8; font-size:.76rem; line-height:1.5;
+    background:rgba(255,46,99,.1); border:1px solid rgba(255,46,99,.38);
+    color:#ff9ab4; font-size:.76rem; line-height:1.5;
   }
 
   @media (max-width:720px){
