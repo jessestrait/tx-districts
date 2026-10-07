@@ -1,3 +1,6 @@
 # Raw TIGER/Line downloads — large, and rebuildable with tools/build_geojson.sh
 data/raw/
 .DS_Store
+
+# wrangler writes account id and cached state here — never publish it
+.wrangler/
