@@ -329,6 +329,41 @@ function handleLocation(lon, lat, label, accuracyM) {
   }
 }
 
+/* Address → point.
+ *
+ * Normally via the worker, which can reach the Census geocoder (the right
+ * source for a US street address, and one that refuses CORS to a browser) and
+ * which caches, so Nominatim's one-request-a-second policy is not being leaned
+ * on by every reader independently.
+ *
+ * If the worker is unreachable, fall back to calling Nominatim directly — the
+ * same thing the page did before it existed. A geocoder being down should
+ * degrade the feature, not remove it.
+ */
+const GEOCODER = "https://tx-geocode.jessestrait.workers.dev/";
+
+function geocode(q) {
+  return fetch(GEOCODER + "?q=" + encodeURIComponent(q))
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error("worker " + r.status))))
+    .then((j) => (j && j.found ? { lat: j.lat, lon: j.lon, label: j.label } : null))
+    .catch(() => nominatimDirect(q));
+}
+
+function nominatimDirect(q) {
+  // Only append the state when the query does not already name it: appending
+  // blindly turns "Austin TX" into "Austin TX, Texas", which Nominatim
+  // resolves to the *University* of Texas at Austin.
+  const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1" +
+    "&countrycodes=us&viewbox=-106.75,36.60,-93.40,25.70&bounded=1&q=" +
+    encodeURIComponent(/\b(tx|texas)\b/i.test(q) ? q : q + ", Texas");
+  return fetch(url, { headers: { Accept: "application/json" } })
+    .then((r) => r.json())
+    .then((j) => (Array.isArray(j) && j.length
+      ? { lat: parseFloat(j[0].lat), lon: parseFloat(j[0].lon),
+          label: (j[0].display_name || q).split(",").slice(0, 3).join(",").trim() }
+      : null));
+}
+
 function wireFind() {
   const btn = $("btn-locate");
   if (!navigator.geolocation) {
@@ -358,31 +393,13 @@ function wireFind() {
     const q = $("find-input").value.trim();
     if (!q) return;
     showFindMsg("Searching…");
-    /* Nominatim is the only free geocoder here that allows browser requests —
-       the Census one refuses CORS.
-
-       Only add ", Texas" when the query does not already name the state:
-       appending it blindly turns "Austin TX" into "Austin TX, Texas", which
-       Nominatim resolves to the *University* of Texas at Austin. The viewbox
-       plus bounded=1 keeps a bare street name inside Texas. */
-    const named = /\b(tx|texas)\b/i.test(q);
-    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1" +
-      "&countrycodes=us&viewbox=-106.65,36.50,-93.51,25.84&bounded=1&q=" +
-      encodeURIComponent(named ? q : q + ", Texas");
-    fetch(url, { headers: { Accept: "application/json" } })
-      .then((r) => r.json())
-      .then((j) => {
-        if (!j.length) {
-          // Nominatim cannot resolve "A & B" intersections, and that is a very
-          // natural thing to type, so name the alternative rather than shrug.
-          showFindMsg(/[&]|\band\b/i.test(q)
-            ? "Street intersections cannot be looked up. Try a street address on one of those streets, or just your ZIP code."
-            : "No match for that address. Try adding the city, or just your ZIP code.", "err");
+    geocode(q)
+      .then((hit) => {
+        if (!hit) {
+          showFindMsg("No match for that address. Try adding the city, or just your ZIP code.", "err");
           return;
         }
-        const hit = j[0];
-        handleLocation(parseFloat(hit.lon), parseFloat(hit.lat),
-          (hit.display_name || q).split(",").slice(0, 3).join(","), null);
+        handleLocation(hit.lon, hit.lat, hit.label, null);
       })
       .catch(() => showFindMsg("Address lookup is unavailable right now. The " + SOS + " can look you up.", "err"));
   });

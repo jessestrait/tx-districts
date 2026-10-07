@@ -1,0 +1,15 @@
+# cd workers/geocode && npx wrangler deploy
+#
+# Never run wrangler from the repo root: it publishes the working directory,
+# .git and all.
+#
+# Free plan is 100,000 requests a day. Every answer is cached at the edge for
+# 30 days and addresses do not move, so repeat lookups of the same ZIP cost
+# nothing upstream — which is the point, since Nominatim asks for no more than
+# one request a second and the Census geocoder has no stated budget at all.
+name = "tx-geocode"
+main = "worker.js"
+compatibility_date = "2026-10-07"
+
+# No KV, no secrets, no bindings. It reads two public geocoders and returns a
+# point.
