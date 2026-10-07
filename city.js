@@ -353,15 +353,26 @@ function wireFind() {
     const q = $("find-input").value.trim();
     if (!q) return;
     showFindMsg("Searching…");
-    // Nominatim is the only free geocoder here that allows browser requests —
-    // the Census one refuses CORS. Bias it to Texas so a bare ZIP resolves.
-    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=" +
-      encodeURIComponent(/^\d{5}$/.test(q) ? q + ", Texas" : q + ", Texas");
+    /* Nominatim is the only free geocoder here that allows browser requests —
+       the Census one refuses CORS.
+
+       Only add ", Texas" when the query does not already name the state:
+       appending it blindly turns "Austin TX" into "Austin TX, Texas", which
+       Nominatim resolves to the *University* of Texas at Austin. The viewbox
+       plus bounded=1 keeps a bare street name inside Texas. */
+    const named = /\b(tx|texas)\b/i.test(q);
+    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=1" +
+      "&countrycodes=us&viewbox=-106.65,36.50,-93.51,25.84&bounded=1&q=" +
+      encodeURIComponent(named ? q : q + ", Texas");
     fetch(url, { headers: { Accept: "application/json" } })
       .then((r) => r.json())
       .then((j) => {
         if (!j.length) {
-          showFindMsg("No match for that address. Try adding the city, or just your ZIP.", "err");
+          // Nominatim cannot resolve "A & B" intersections, and that is a very
+          // natural thing to type, so name the alternative rather than shrug.
+          showFindMsg(/[&]|\band\b/i.test(q)
+            ? "Street intersections cannot be looked up. Try a street address on one of those streets, or just your ZIP code."
+            : "No match for that address. Try adding the city, or just your ZIP code.", "err");
           return;
         }
         const hit = j[0];

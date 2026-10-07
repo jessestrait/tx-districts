@@ -28,6 +28,12 @@ TEXT = (230, 243, 255)
 FADE = 7                             # crossfade steps between the two maps
 HOLD_MS, STEP_MS = 1400, 55          # dwell on each map, and per crossfade step
 
+# Push in on the I-35 corridor — Austin up toward DFW, San Antonio below — which
+# is where the 2025 redraw actually moved lines. Far west Texas runs off-frame;
+# the panhandle and gulf keep the silhouette recognisable.
+ZOOM = 1.45
+FOCUS = (31.1, -98.0)                # lat, lon
+
 
 def rings(geom):
     polys = [geom["coordinates"]] if geom["type"] == "Polygon" else geom["coordinates"]
@@ -52,16 +58,27 @@ def dnum(f):
     return str(int(f["properties"]["GEOID"][-2:]))
 
 
-def make_fit(all_feats, w, h, pad):
+def make_fit(all_feats, w, h, pad, zoom=1.0, focus=None):
+    """Fit Texas to the frame, then optionally push in on a focal point.
+
+    The redraw is concentrated on the I-35 corridor and the metros, so the card
+    pushes in there: at 1x the state sits whole and tidy and the interesting
+    districts are a few pixels across. Zooming lets the edges of the state run
+    off-frame while the silhouette stays readable.
+    """
     x0, y0, x1, y1 = bounds(all_feats)
     lat0 = (y0 + y1) / 2
     k = math.cos(math.radians(lat0))
     px0, px1 = x0 * k, x1 * k
-    s = min((w - 2 * pad) / (px1 - px0), (h - 2 * pad) / (y1 - y0))
-    ox = pad + ((w - 2 * pad) - (px1 - px0) * s) / 2
-    oy = pad + ((h - 2 * pad) - (y1 - y0) * s) / 2
+    s = min((w - 2 * pad) / (px1 - px0), (h - 2 * pad) / (y1 - y0)) * zoom
+
+    # Centre on the focal point if given, else on the state's own middle.
+    cx = (focus[1] * k) if focus else (px0 + px1) / 2
+    cy = focus[0] if focus else (y0 + y1) / 2
+
     def fit(lon, lat):
-        return (ox + (lon * k - px0) * s, oy + (y1 - lat) * s)
+        return (w / 2 + (lon * k - cx) * s,
+                h / 2 + (cy - lat) * s)
     return fit
 
 
@@ -116,7 +133,7 @@ def render(features, reps, repkey, fit, label):
 def main():
     new, old = load(NEW), load(OLD)
     reps = json.load(open(REPS))
-    fit = make_fit(new + old, W, H, 26)
+    fit = make_fit(new + old, W, H, 26, zoom=ZOOM, focus=FOCUS)
 
     a = render(old, reps, "map_2021", fit, "2021")
     b = render(new, reps, "map_2025", fit, "2026")
@@ -132,7 +149,9 @@ def main():
     for i in range(1, FADE + 1):
         frames.append(Image.blend(b, a, i / (FADE + 1))); durations.append(STEP_MS)
 
-    pal = [f.convert("P", palette=Image.ADAPTIVE, colors=128) for f in frames]
+    # 64 colours is indistinguishable from 128 here (the art is two flat fills
+    # plus a bloom) and ~20% smaller, which matters on a landing page.
+    pal = [f.convert("P", palette=Image.ADAPTIVE, colors=64) for f in frames]
     pal[0].save(OUT, save_all=True, append_images=pal[1:], duration=durations,
                 loop=0, optimize=True, disposal=2)
     print("wrote %s  (%d frames, %.0f KB, cycle %.1fs)"
